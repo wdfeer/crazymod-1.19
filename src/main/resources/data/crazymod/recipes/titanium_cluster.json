@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OO",
+    "OO"
+  ],
+  "key": {
+    "O": {
+      "item": "crazymod:titanium_ore"
+    }
+  },
+  "result": {
+    "item": "crazymod:titanium_cluster",
+    "count": 1
+  }
+}
+

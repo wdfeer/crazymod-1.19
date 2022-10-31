@@ -13,6 +13,8 @@ import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 public class ModItems {
     public static final Item TITANIUM_ORE = RegisterItem("titanium_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
+    public static final Item TITANIUM_CLUSTER = RegisterItem("titanium_cluster",
+            new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
     public static final Item TITANIUM_INGOT = RegisterItem("titanium_ingot",
             new Item(new FabricItemSettings().group(ItemGroup.MATERIALS).fireproof()));
     public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
