@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "crazymod:item/titanium_sword"
+    "layer0": "crazymod:item/titanium_pickaxe"
   }
 }
