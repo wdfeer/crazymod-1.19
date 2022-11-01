@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " TT",
+    "ERT",
+    " E "
+  ],
+  "key": {
+    "T": {
+      "item": "crazymod:titanium_ingot"
+    },
+    "E": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "crazymod:titanium_drill",
+    "count": 1
+  }
+}
+
