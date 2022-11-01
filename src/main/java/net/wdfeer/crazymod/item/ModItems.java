@@ -11,6 +11,7 @@ import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
 public class ModItems {
+
     public static final Item TITANIUM_ORE = RegisterItem("titanium_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
     public static final Item TITANIUM_CLUSTER = RegisterItem("titanium_cluster",
@@ -25,5 +26,5 @@ public class ModItems {
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);
     }
-    public static void RegisterModItems() {}
+    public static void Initialize() {}
 }

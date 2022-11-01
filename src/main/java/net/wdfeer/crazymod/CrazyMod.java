@@ -2,6 +2,7 @@ package net.wdfeer.crazymod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ public class CrazyMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItems.RegisterModItems();
+		ModItems.Initialize();
+		ModBlocks.Initialize();
 	}
 }
