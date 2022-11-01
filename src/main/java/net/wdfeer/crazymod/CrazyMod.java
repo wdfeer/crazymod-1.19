@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.item.ModItems;
+import net.wdfeer.crazymod.worldgen.ModOres;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +16,6 @@ public class CrazyMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.Initialize();
 		ModBlocks.Initialize();
+		ModOres.Initialize();
 	}
 }
