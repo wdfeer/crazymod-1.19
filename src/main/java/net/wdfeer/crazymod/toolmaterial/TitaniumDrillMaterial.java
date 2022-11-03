@@ -16,4 +16,8 @@ public class TitaniumDrillMaterial extends TitaniumMaterial {
     public int getMiningLevel() {
         return MiningLevels.STONE;
     }
+    @Override
+    public float getAttackDamage() {
+        return 4f;
+    }
 }
