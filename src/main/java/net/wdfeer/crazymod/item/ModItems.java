@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.item.custom.TitaniumDrill;
+import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
 import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
@@ -26,6 +27,8 @@ public class ModItems {
             new PickaxeItem(TitaniumMaterial.INSTANCE, 5, -2.5f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
             new TitaniumDrill(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
+    public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
+            new TitaniumRepeater(new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

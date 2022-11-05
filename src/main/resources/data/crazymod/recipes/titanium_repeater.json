@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "SES",
+    " E "
+  ],
+  "key": {
+    "I": {
+      "item": "crazymod:titanium_ingot"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "E": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "crazymod:titanium_repeater",
+    "count": 1
+  }
+}
+
