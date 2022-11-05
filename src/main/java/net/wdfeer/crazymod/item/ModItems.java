@@ -28,7 +28,7 @@ public class ModItems {
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
             new TitaniumDrill(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
-            new TitaniumRepeater(new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
+            new TitaniumRepeater());
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

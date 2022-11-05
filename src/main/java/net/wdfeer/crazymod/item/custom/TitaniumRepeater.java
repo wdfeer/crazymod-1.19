@@ -1,5 +1,6 @@
 package net.wdfeer.crazymod.item.custom;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -9,16 +10,25 @@ import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import net.wdfeer.crazymod.item.ModItems;
+import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
-import java.util.function.Predicate;
-
-public class TitaniumRepeater extends RangedWeaponItem implements Vanishable {
-    public TitaniumRepeater(Item.Settings settings) {
-        super(settings);
+public class TitaniumRepeater extends BowItem {
+    public TitaniumRepeater() {
+        super(new FabricItemSettings().fireproof().group(ItemGroup.COMBAT).maxDamage(TitaniumMaterial.INSTANCE.getDurability()));
+    }
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
+    }
+    @Override
+    public int getEnchantability() {
+        return TitaniumMaterial.INSTANCE.getEnchantability();
+    }
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient.isOf(ModItems.TITANIUM_INGOT);
     }
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
@@ -30,6 +40,8 @@ public class TitaniumRepeater extends RangedWeaponItem implements Vanishable {
             return;
         }
         shoot(stack, world, player, charge);
+        if (!player.getAbilities().creativeMode)
+            stack.damage(1, user, e -> e.sendToolBreakStatus(user.preferredHand));
         user.stopUsingItem();
     }
     @Override
@@ -52,10 +64,8 @@ public class TitaniumRepeater extends RangedWeaponItem implements Vanishable {
             ArrowItem arrowItem = (ArrowItem)(arrowStack.getItem() instanceof ArrowItem ? arrowStack.getItem() : Items.ARROW);
             PersistentProjectileEntity projectile = arrowItem.createArrow(world, arrowStack, player);
             projectile.setDamage(projectile.getDamage() * damageMult);
-            projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, charge * 2.25f, 1.0f);
-            if (charge == 1.0f) {
-                projectile.setCritical(true);
-            }
+            projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, 2.25f, 1.0f);
+            projectile.setCritical(true);
             int powerLvl;
             if ((powerLvl = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) > 0) {
                 projectile.setDamage(projectile.getDamage() + (double)powerLvl * 0.5 + 0.5);
@@ -92,30 +102,6 @@ public class TitaniumRepeater extends RangedWeaponItem implements Vanishable {
     public int getMaxUseTime(ItemStack stack) {
         return 24000;
     }
-
     @Override
-    public UseAction getUseAction(ItemStack stack) {
-        return UseAction.BOW;
-    }
-
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack itemStack = user.getStackInHand(hand);
-        boolean hasAmmo = !user.getArrowType(itemStack).isEmpty();
-        if (user.getAbilities().creativeMode || hasAmmo) {
-            user.setCurrentHand(hand);
-            return TypedActionResult.consume(itemStack);
-        }
-        return TypedActionResult.fail(itemStack);
-    }
-
-    @Override
-    public Predicate<ItemStack> getProjectiles() {
-        return BOW_PROJECTILES;
-    }
-
-    @Override
-    public int getRange() {
-        return 15;
-    }
+    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {}
 }

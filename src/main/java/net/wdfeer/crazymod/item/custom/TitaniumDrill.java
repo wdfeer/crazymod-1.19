@@ -7,14 +7,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -57,6 +55,9 @@ public class TitaniumDrill extends ToolItem {
         }
         return super.use(world, user, hand);
     }
+    void damage(ItemStack stack, LivingEntity user){
+        stack.damage(1, user, e -> e.sendToolBreakStatus(user.preferredHand));
+    }
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         if (!(miner instanceof PlayerEntity))
@@ -74,15 +75,13 @@ public class TitaniumDrill extends ToolItem {
                         if (isCompatibleMiningLevel(newState) && isSuitableFor(newState) && newHard < hard * 3f) {
                             world.breakBlock(newPos, true);
                             if (newHard > 0f)
-                                stack.damage(1, Random.create(), (ServerPlayerEntity) miner);
+                                damage(stack, miner);
                         }
                     }
                 }
             }
         }
-        if (stack.damage(1, Random.create(), (ServerPlayerEntity) miner)){
-            stack.decrement(1);
-        }
+        damage(stack, miner);
         return hard > 0f;
     }
     @Override
