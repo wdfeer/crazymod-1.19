@@ -17,22 +17,20 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.function.BiConsumer;
 
 public class TitaniumDrill extends ToolItem {
     public TitaniumDrill(ToolMaterial material, Settings settings) {
         super(material, settings);
     }
+    public static void addTooltipLine(List<Text> tooltip, String str, Formatting formatting){
+        Text t = Text.of(str);
+        t = t.getWithStyle(t.getStyle().withColor(formatting)).get(0);
+        tooltip.add(t);
+    }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        BiConsumer<String, Formatting> addLine = (String s, Formatting color) ->
-        {
-            Text t = Text.of(s);
-            t = t.getWithStyle(t.getStyle().withColor(color)).get(0);
-            tooltip.add(t);
-        };
-        addLine.accept("Can only mine on the level of the stone pickaxe", Formatting.GRAY);
-        addLine.accept("Right click to switch to 3x3x3 mode", Formatting.GRAY);
+        addTooltipLine(tooltip,"Can only mine on the level of the stone pickaxe", Formatting.GRAY);
+        addTooltipLine(tooltip,"Right click to switch to 3x3x3 mode", Formatting.GRAY);
     }
     @Override
     public boolean isSuitableFor(BlockState state) {

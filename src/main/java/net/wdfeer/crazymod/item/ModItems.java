@@ -1,13 +1,11 @@
 package net.wdfeer.crazymod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
+import net.wdfeer.crazymod.item.custom.CopperBow;
 import net.wdfeer.crazymod.item.custom.TitaniumDrill;
 import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
 import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
@@ -29,6 +27,8 @@ public class ModItems {
             new TitaniumDrill(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
             new TitaniumRepeater());
+    public static final Item COPPER_BOW = RegisterItem("copper_bow",
+            new CopperBow());
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);
