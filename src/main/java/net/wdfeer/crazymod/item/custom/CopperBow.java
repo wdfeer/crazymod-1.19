@@ -26,7 +26,7 @@ public class CopperBow extends BowItem {
     public final float FREE_SHOT_CHANCE = 0.75f;
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        TitaniumDrill.addTooltipLine(tooltip, FREE_SHOT_CHANCE * 100f + "% chance not to consume ammo", Formatting.GRAY);
+        TitaniumDrill.addTooltipLine(tooltip, (int)(FREE_SHOT_CHANCE * 100f) + "% chance not to consume ammo", Formatting.GRAY);
     }
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
