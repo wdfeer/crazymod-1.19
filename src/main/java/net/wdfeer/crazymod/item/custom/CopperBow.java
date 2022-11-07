@@ -46,7 +46,7 @@ public class CopperBow extends BowItem {
             stack.damage(1, user, e -> e.sendToolBreakStatus(user.preferredHand));
     }
     void shoot(ItemStack stack, World world, PlayerEntity player, float charge){
-        float damageMult = 0.7f * charge;
+        float damageMult = 0.8f * charge;
         boolean infiniteAmmo = player.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY, stack) > 0;
         ItemStack arrowStack = player.getArrowType(stack);
         if (arrowStack.isEmpty() && !infiniteAmmo) {
@@ -72,7 +72,7 @@ public class CopperBow extends BowItem {
             ArrowItem arrowItem = (ArrowItem)(arrowStack.getItem() instanceof ArrowItem ? arrowStack.getItem() : Items.ARROW);
             PersistentProjectileEntity projectile = arrowItem.createArrow(world, arrowStack, player);
             projectile.setDamage(projectile.getDamage() * damageMult);
-            projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, 2f * charge, 1.0f);
+            projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, 2f * (0.4f + charge * 0.6f), 1.0f);
             int powerLvl;
             if ((powerLvl = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) > 0) {
                 projectile.setDamage(projectile.getDamage() + (double)powerLvl * 0.75 + 0.25);
