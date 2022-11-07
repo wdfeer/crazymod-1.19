@@ -24,7 +24,7 @@ public class ModItems {
     public static final Item TITANIUM_PICKAXE = RegisterItem("titanium_pickaxe",
             new PickaxeItem(TitaniumMaterial.INSTANCE, 5, -2.5f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
-            new TitaniumDrill(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
+            new TitaniumDrill());
     public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
             new TitaniumRepeater());
     public static final Item COPPER_BOW = RegisterItem("copper_bow",

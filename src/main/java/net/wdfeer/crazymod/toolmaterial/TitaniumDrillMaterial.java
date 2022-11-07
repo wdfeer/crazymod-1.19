@@ -6,7 +6,7 @@ public class TitaniumDrillMaterial extends TitaniumMaterial {
     public static final TitaniumDrillMaterial INSTANCE = new TitaniumDrillMaterial();
     @Override
     public int getDurability() {
-        return super.getDurability() / 2;
+        return super.getDurability() * 2 / 3;
     }
     @Override
     public float getMiningSpeedMultiplier() {
@@ -15,9 +15,5 @@ public class TitaniumDrillMaterial extends TitaniumMaterial {
     @Override
     public int getMiningLevel() {
         return MiningLevels.STONE;
-    }
-    @Override
-    public float getAttackDamage() {
-        return 4f;
     }
 }
