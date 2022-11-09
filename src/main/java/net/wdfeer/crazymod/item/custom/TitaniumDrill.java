@@ -31,7 +31,7 @@ public class TitaniumDrill extends ToolItem {
     public TitaniumDrill() {
         super(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof());
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Tool modifier", 13, EntityAttributeModifier.Operation.ADDITION)).put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Tool modifier", -3.25, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Tool modifier", 11, EntityAttributeModifier.Operation.ADDITION)).put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Tool modifier", -2.9, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
     @Override
