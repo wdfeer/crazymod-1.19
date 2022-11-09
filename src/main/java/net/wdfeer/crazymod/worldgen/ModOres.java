@@ -2,7 +2,6 @@ package net.wdfeer.crazymod.worldgen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -23,12 +22,12 @@ public class ModOres {
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.NETHERRACK,
                     ModBlocks.TITANIUM_OREBLOCK.getDefaultState(),
-                    8));
+                    7));
 
     public static PlacedFeature NETHER_TITANIUM_ORE_PLACED_FEATURE = new PlacedFeature(
             RegistryEntry.of(NETHER_TITANIUM_ORE_CONFIGURED_FEATURE),
             Arrays.asList(
-                    CountPlacementModifier.of(12),
+                    CountPlacementModifier.of(9),
                     SquarePlacementModifier.of(),
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))));
     public static void Initialize() {
