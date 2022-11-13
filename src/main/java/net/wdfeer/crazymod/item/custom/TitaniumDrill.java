@@ -50,7 +50,7 @@ public class TitaniumDrill extends ToolItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         addTooltipLine(tooltip, "Can only mine on the level of the stone pickaxe", Formatting.GRAY);
-        addTooltipLine(tooltip, "Right click to switch to 3x3x3 mode", Formatting.GRAY);
+        addTooltipLine(tooltip, "Right click while crouching to switch to 3x3x3 mode", Formatting.GRAY);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class TitaniumDrill extends ToolItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (!world.isClient() && hand == Hand.MAIN_HAND) {
+        if (!world.isClient() && hand == Hand.MAIN_HAND && user.isInSneakingPose()) {
             excavation = !excavation;
             user.sendMessage(Text.of("Excavation mode is " + (excavation ? "on" : "off")));
             return TypedActionResult.success(user.getStackInHand(hand));
