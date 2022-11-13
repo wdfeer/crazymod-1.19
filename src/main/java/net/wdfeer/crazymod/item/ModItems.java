@@ -1,16 +1,19 @@
 package net.wdfeer.crazymod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.item.custom.CopperBow;
 import net.wdfeer.crazymod.item.custom.TitaniumDrill;
 import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
+import net.wdfeer.crazymod.item.custom.WandOfSparking;
 import net.wdfeer.crazymod.toolmaterial.BoneMaterial;
 import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
-import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
 public class ModItems {
@@ -35,6 +38,8 @@ public class ModItems {
             new SwordItem(HallowedMaterial.INSTANCE, 10, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item BONE_SWORD = RegisterItem("bone_sword",
             new SwordItem(BoneMaterial.INSTANCE, 5, -2.25f, new FabricItemSettings().group(ItemGroup.COMBAT)));
+    public static final Item WAND_OF_SPARKING = RegisterItem("wand_of_sparking",
+            new WandOfSparking());
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

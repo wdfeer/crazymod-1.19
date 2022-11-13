@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "crazymod:item/wand_of_sparking"
+  }
+}

@@ -18,7 +18,7 @@ import net.wdfeer.crazymod.block.ModBlocks;
 import java.util.Arrays;
 
 public class ModOres {
-    private static final ConfiguredFeature<?, ?> NETHER_TITANIUM_ORE_CONFIGURED_FEATURE = new ConfiguredFeature
+    private static final ConfiguredFeature<?, ?> NETHER_TITANIUM_ORE_CONFIGURED_FEATURE = new ConfiguredFeature<>
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.NETHERRACK,
                     ModBlocks.TITANIUM_OREBLOCK.getDefaultState(),

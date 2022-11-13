@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S",
+    "SL"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "L": {
+      "tag": "leaves"
+    }
+  },
+  "result": {
+    "item": "crazymod:wand_of_sparking",
+    "count": 1
+  }
+}
+

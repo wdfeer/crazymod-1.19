@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.wdfeer.crazymod.CrazyMod"
+    ],
+    "client": [
+      "net.wdfeer.crazymod.CrazyClientMod"
     ]
   },
   "mixins": [
