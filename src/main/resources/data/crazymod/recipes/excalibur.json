@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:nether_star"
+  },
+  "base": {
+    "item": "crazymod:titanium_sword"
+  },
+  "result": {
+    "item": "crazymod:excalibur"
+  }
+}

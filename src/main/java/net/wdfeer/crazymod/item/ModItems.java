@@ -8,6 +8,7 @@ import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.item.custom.CopperBow;
 import net.wdfeer.crazymod.item.custom.TitaniumDrill;
 import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
+import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
@@ -20,7 +21,7 @@ public class ModItems {
     public static final Item TITANIUM_INGOT = RegisterItem("titanium_ingot",
             new Item(new FabricItemSettings().group(ItemGroup.MATERIALS).fireproof()));
     public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
-            new SwordItem(TitaniumMaterial.INSTANCE, 9, -2.4f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
+            new SwordItem(TitaniumMaterial.INSTANCE, 8, -2.4f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item TITANIUM_PICKAXE = RegisterItem("titanium_pickaxe",
             new PickaxeItem(TitaniumMaterial.INSTANCE, 5, -2.5f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
@@ -29,6 +30,8 @@ public class ModItems {
             new TitaniumRepeater());
     public static final Item COPPER_BOW = RegisterItem("copper_bow",
             new CopperBow());
+    public static final Item EXCALIBUR = RegisterItem("excalibur",
+            new SwordItem(HallowedMaterial.INSTANCE, 10, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);
