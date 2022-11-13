@@ -8,6 +8,7 @@ import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.item.custom.CopperBow;
 import net.wdfeer.crazymod.item.custom.TitaniumDrill;
 import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
+import net.wdfeer.crazymod.toolmaterial.BoneMaterial;
 import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
@@ -32,6 +33,8 @@ public class ModItems {
             new CopperBow());
     public static final Item EXCALIBUR = RegisterItem("excalibur",
             new SwordItem(HallowedMaterial.INSTANCE, 10, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
+    public static final Item BONE_SWORD = RegisterItem("bone_sword",
+            new SwordItem(BoneMaterial.INSTANCE, 5, -2.25f, new FabricItemSettings().group(ItemGroup.COMBAT)));
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);
