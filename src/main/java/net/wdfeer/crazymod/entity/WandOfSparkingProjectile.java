@@ -43,7 +43,7 @@ public class WandOfSparkingProjectile extends ProjectileEntity {
         Entity entity = entityHitResult.getEntity();
         entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 4f);
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.setOnFireFor(15);
+            livingEntity.setOnFireFor(10);
         }
     }
     @Override

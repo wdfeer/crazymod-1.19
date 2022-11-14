@@ -8,10 +8,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.item.custom.CopperBow;
-import net.wdfeer.crazymod.item.custom.TitaniumDrill;
-import net.wdfeer.crazymod.item.custom.TitaniumRepeater;
-import net.wdfeer.crazymod.item.custom.WandOfSparking;
+import net.wdfeer.crazymod.item.custom.*;
 import net.wdfeer.crazymod.toolmaterial.BoneMaterial;
 import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
@@ -40,6 +37,8 @@ public class ModItems {
             new SwordItem(BoneMaterial.INSTANCE, 5, -2.25f, new FabricItemSettings().group(ItemGroup.COMBAT)));
     public static final Item WAND_OF_SPARKING = RegisterItem("wand_of_sparking",
             new WandOfSparking());
+    public static final Item BLADE_OF_GRASS = RegisterItem("blade_of_grass",
+            new BladeOfGrass());
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

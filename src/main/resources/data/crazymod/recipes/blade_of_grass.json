@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "V",
+    "V",
+    "S"
+  ],
+  "key": {
+    "V": {
+      "item": "minecraft:vine"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "crazymod:blade_of_grass",
+    "count": 1
+  }
+}
+
