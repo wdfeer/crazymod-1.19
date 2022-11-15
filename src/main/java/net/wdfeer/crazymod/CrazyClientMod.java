@@ -9,5 +9,6 @@ public class CrazyClientMod implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(ModEntityTypes.WAND_OF_SPARKING, EmptyEntityRenderer::new);
+		EntityRendererRegistry.register(ModEntityTypes.AMETHYST_STAFF, EmptyEntityRenderer::new);
 	}
 }

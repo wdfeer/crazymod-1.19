@@ -39,6 +39,8 @@ public class ModItems {
             new WandOfSparking());
     public static final Item BLADE_OF_GRASS = RegisterItem("blade_of_grass",
             new BladeOfGrass());
+    public static final Item AMETHYST_STAFF = RegisterItem("amethyst_staff",
+            new AmethystStaff());
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

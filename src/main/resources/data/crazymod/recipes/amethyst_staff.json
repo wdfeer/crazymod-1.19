@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " S ",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:amethyst"
+    },
+    "S": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "crazymod:amethyst_staff",
+    "count": 1
+  }
+}
+

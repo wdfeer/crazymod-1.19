@@ -10,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -18,14 +19,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import static net.wdfeer.crazymod.entity.AmethystStaffProjectile.spawnParticleWithRandomVelocity;
-
-public class WandOfSparkingProjectile extends ProjectileEntity {
-    public WandOfSparkingProjectile(LivingEntity owner, World world){
-        super(ModEntityTypes.WAND_OF_SPARKING, world);
+public class AmethystStaffProjectile extends ProjectileEntity {
+    public AmethystStaffProjectile(LivingEntity owner, World world){
+        super(ModEntityTypes.AMETHYST_STAFF, world);
         this.setOwner(owner);
     }
-    public WandOfSparkingProjectile(EntityType<WandOfSparkingProjectile> type, World world) {
+    public AmethystStaffProjectile(EntityType<AmethystStaffProjectile> type, World world) {
         super(type, world);
     }
 
@@ -43,15 +42,12 @@ public class WandOfSparkingProjectile extends ProjectileEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 4f);
-        if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.setOnFireFor(10);
-        }
+        entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), 10f);
     }
     @Override
     public void tick() {
         super.tick();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             // From net.minecraft.entity.projectile.thrown.ThrownEntity.java
             HitResult hitResult = ProjectileUtil.getCollision(this, this::canHit);
             boolean bl = false;
@@ -81,22 +77,25 @@ public class WandOfSparkingProjectile extends ProjectileEntity {
             this.setPosition(d, e, f);
 
 
-            if (world.isClient)
-                spawnParticleWithRandomVelocity(ParticleTypes.FLAME, world, getPos(), 0.5f);
-            else {
-                if (this.isTouchingWater()){
-                    this.kill();
-                }
+            if (world.isClient){
+                spawnParticleWithRandomVelocity(ParticleTypes.DRAGON_BREATH, world, getPos(), 1);
             }
         }
-        if (!this.hasNoGravity()) {
-            Vec3d vec3d2 = this.getVelocity();
-            this.setVelocity(vec3d2.x, vec3d2.y - 0.005f, vec3d2.z);
-        }
+    }
+    public static void spawnParticleWithRandomVelocity(ParticleEffect type, World world, Vec3d pos, float velocityScale){
+        float vx = (world.random.nextFloat() - 0.5f) / 15f * velocityScale;
+        float vy = (world.random.nextFloat() - 0.5f) / 15f * velocityScale;
+        float vz = (world.random.nextFloat() - 0.5f) / 15f * velocityScale;
+        world.addParticle(type, pos.x, pos.y, pos.z, vx, vy, vz);
     }
     @Override
+    protected float getVelocityMultiplier() {
+        return super.getVelocityMultiplier();
+    }
+
+    @Override
     public void checkDespawn() {
-        if (!world.isClient && this.age > 20)
+        if (!world.isClient && this.age > 60)
             this.kill();
     }
 

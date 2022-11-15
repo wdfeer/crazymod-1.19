@@ -12,7 +12,10 @@ import net.wdfeer.crazymod.CrazyMod;
 public class ModEntityTypes {
     public static final EntityType<WandOfSparkingProjectile> WAND_OF_SPARKING = register("wand_of_sparking_projectile",
             FabricEntityTypeBuilder.<WandOfSparkingProjectile>create(SpawnGroup.MISC, WandOfSparkingProjectile::new)
-                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F)));
+                    .dimensions(EntityDimensions.fixed(0.35F, 0.35F)));
+    public static final EntityType<AmethystStaffProjectile> AMETHYST_STAFF = register("amethyst_staff_projectile",
+            FabricEntityTypeBuilder.<AmethystStaffProjectile>create(SpawnGroup.MISC, AmethystStaffProjectile::new)
+                    .dimensions(EntityDimensions.fixed(0.35F, 0.35F)));
     public static <T extends Entity> EntityType<T> register(String id, FabricEntityTypeBuilder<T> type) {
         return Registry.register(Registry.ENTITY_TYPE, new Identifier(CrazyMod.MOD_ID, id), type.build());
     }
