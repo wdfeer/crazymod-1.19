@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "crazymod:titanium_oreblock"
+    "crazymod:titanium_oreblock",
+    "crazymod:furnace_catalyst"
   ]
 }

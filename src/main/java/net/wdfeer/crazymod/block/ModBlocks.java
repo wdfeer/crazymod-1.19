@@ -10,11 +10,14 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import org.jetbrains.annotations.Nullable;
+import net.wdfeer.crazymod.block.custom.FurnaceCatalyst;
 
 public class ModBlocks {
     public static final Block TITANIUM_OREBLOCK = RegisterBlock("titanium_oreblock",
             new Block(FabricBlockSettings.of(Material.STONE).strength(10f, 75f).requiresTool()),
+            ItemGroup.BUILDING_BLOCKS);
+    public static final Block FURNACE_CATALYST = RegisterBlock("furnace_catalyst",
+            new FurnaceCatalyst(),
             ItemGroup.BUILDING_BLOCKS);
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {

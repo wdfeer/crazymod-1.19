@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:redstone_block"
+    },
+    "X": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "crazymod:furnace_catalyst",
+    "count": 1
+  }
+}
+
