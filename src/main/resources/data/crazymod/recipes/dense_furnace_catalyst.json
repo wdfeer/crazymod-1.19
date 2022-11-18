@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "YXY",
+    "YXY"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:copper_ingot"
+    },
+    "X": {
+      "item": "crazymod:furnace_catalyst"
+    }
+  },
+  "result": {
+    "item": "crazymod:dense_furnace_catalyst",
+    "count": 1
+  }
+}
+

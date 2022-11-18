@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class FurnaceCatalyst extends BlockWithEntity implements BlockEntityProvider {
     public FurnaceCatalyst() {
-        super(FabricBlockSettings.of(Material.STONE).strength(4f, 30f).requiresTool());
+        super(FabricBlockSettings.of(Material.STONE).strength(4.5f, 30f).requiresTool());
     }
 
     @Override
