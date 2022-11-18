@@ -26,19 +26,25 @@ public class FurnaceCatalystEntity extends BlockEntity {
             return;
         BlockEntity aboveBlockEntity = world.getBlockEntity(abovePos);
         if (aboveBlockEntity instanceof AbstractFurnaceBlockEntity furnaceEntity){
-            int count = instance.getExtraTicks();
-            while (count < 512){
-                BlockPos below = pos.down(count);
-                BlockEntity belowEntity = world.getBlockEntity(below);
-                if (belowEntity instanceof FurnaceCatalystEntity catalyst) {
-                    count += catalyst.getExtraTicks();
-                } else {
-                    break;
-                }
-            }
-            for (int i = 0; i < count; i++) {
+            int extraTicks = getTotalExtraTicks(world, pos, instance);
+            for (int i = 0; i < extraTicks; i++) {
                 AbstractFurnaceBlockEntity.tick(world, abovePos, aboveState, furnaceEntity);
             }
         }
+    }
+    private static int getTotalExtraTicks(World world, BlockPos topPos, FurnaceCatalystEntity topCatalyst){
+        int catalystCount = 1;
+        int extraTicks = topCatalyst.getExtraTicks();
+        while (catalystCount < 512){
+            BlockPos below = topPos.down(catalystCount);
+            BlockEntity belowEntity = world.getBlockEntity(below);
+            if (belowEntity instanceof FurnaceCatalystEntity catalyst) {
+                extraTicks += catalyst.getExtraTicks();
+                catalystCount++;
+            } else {
+                break;
+            }
+        }
+        return extraTicks;
     }
 }
