@@ -7,6 +7,7 @@ import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.block.custom.DenseFurnaceCatalystEntity;
 import net.wdfeer.crazymod.block.custom.FurnaceCatalystEntity;
+import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancerEntity;
 
 public class ModBlockEntities {
     public static final BlockEntityType<FurnaceCatalystEntity> FURNACE_CATALYST_ENTITY_TYPE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
@@ -15,5 +16,8 @@ public class ModBlockEntities {
     public static final BlockEntityType<DenseFurnaceCatalystEntity> DENSE_FURNACE_CATALYST_ENTITY_TYPE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
             new Identifier(CrazyMod.MOD_ID, "dense_furnace_catalyst_entity"),
             FabricBlockEntityTypeBuilder.create(DenseFurnaceCatalystEntity::new, ModBlocks.DENSE_FURNACE_CATALYST).build());
+    public static final BlockEntityType<FurnaceEfficiencyEnhancerEntity> FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+            new Identifier(CrazyMod.MOD_ID, "furnace_efficiency_enhancer_entity"),
+            FabricBlockEntityTypeBuilder.create(FurnaceEfficiencyEnhancerEntity::new, ModBlocks.FURNACE_EFFICIENCY_ENHANCER).build());
     public static void Initialize() {}
 }

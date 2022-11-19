@@ -11,6 +11,7 @@ import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.block.custom.DenseFurnaceCatalyst;
 import net.wdfeer.crazymod.block.custom.FurnaceCatalyst;
+import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancer;
 
 public class ModBlocks {
     public static final Block TITANIUM_OREBLOCK = RegisterBlock("titanium_oreblock",
@@ -21,6 +22,9 @@ public class ModBlocks {
             ItemGroup.DECORATIONS);
     public static final Block DENSE_FURNACE_CATALYST = RegisterBlock("dense_furnace_catalyst",
             new DenseFurnaceCatalyst(),
+            ItemGroup.DECORATIONS);
+    public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
+            new FurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS);
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {
