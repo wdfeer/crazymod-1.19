@@ -7,7 +7,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.block.ModBlockEntities;
+import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
 import java.lang.reflect.Field;
@@ -17,7 +17,7 @@ public class FurnaceEfficiencyEnhancerEntity extends FurnaceUpgradeEntity {
         super(type, pos, state);
     }
     public FurnaceEfficiencyEnhancerEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE, pos, state);
+        super(ModBlockEntityTypes.FURNACE_EFFICIENCER, pos, state);
     }
     public float getFailChance() {
         return 0.8f;

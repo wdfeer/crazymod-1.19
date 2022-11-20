@@ -7,7 +7,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.wdfeer.crazymod.block.ModBlockEntities;
+import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.entity.FurnaceEfficiencyEnhancerEntity;
 import net.wdfeer.crazymod.block.entity.FurnaceUpgradeEntity;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +31,7 @@ public class FurnaceEfficiencyEnhancer extends BlockWithEntity implements BlockE
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type,
-                ModBlockEntities.FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE,
+                ModBlockEntityTypes.FURNACE_EFFICIENCER,
                 FurnaceUpgradeEntity::tick);
     }
 }

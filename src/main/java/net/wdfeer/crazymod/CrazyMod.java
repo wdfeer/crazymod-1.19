@@ -2,7 +2,7 @@ package net.wdfeer.crazymod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.wdfeer.crazymod.block.ModBlockEntities;
+import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.entity.ModEntityTypes;
 import net.wdfeer.crazymod.item.ModItems;
@@ -20,7 +20,7 @@ public class CrazyMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.Initialize();
 		ModBlocks.Initialize();
-		ModBlockEntities.Initialize();
+		ModBlockEntityTypes.Initialize();
 		ModOres.Initialize();
 		ModModelPredicateProvider.registerModModels();
 		ModEntityTypes.Initialize();

@@ -6,7 +6,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.wdfeer.crazymod.block.ModBlockEntities;
+import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.entity.DenseFurnaceCatalystEntity;
 import net.wdfeer.crazymod.block.entity.FurnaceUpgradeEntity;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +20,7 @@ public class DenseFurnaceCatalyst extends FurnaceCatalyst {
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type,
-                ModBlockEntities.DENSE_FURNACE_CATALYST_ENTITY_TYPE,
+                ModBlockEntityTypes.DENSE_FURNACE_CATALYST,
                 FurnaceUpgradeEntity::tick);
     }
 }

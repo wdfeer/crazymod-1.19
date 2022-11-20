@@ -11,20 +11,20 @@ import net.wdfeer.crazymod.block.entity.DenseFurnaceEfficiencyEnhancerEntity;
 import net.wdfeer.crazymod.block.entity.FurnaceCatalystEntity;
 import net.wdfeer.crazymod.block.entity.FurnaceEfficiencyEnhancerEntity;
 
-public class ModBlockEntities {
-    public static final BlockEntityType<FurnaceCatalystEntity> FURNACE_CATALYST_ENTITY_TYPE =
+public class ModBlockEntityTypes {
+    public static final BlockEntityType<FurnaceCatalystEntity> FURNACE_CATALYST =
             RegisterBlockEntityType("furnace_catalyst_entity",
                 FurnaceCatalystEntity::new,
                 ModBlocks.FURNACE_CATALYST);
-    public static final BlockEntityType<DenseFurnaceCatalystEntity> DENSE_FURNACE_CATALYST_ENTITY_TYPE =
+    public static final BlockEntityType<DenseFurnaceCatalystEntity> DENSE_FURNACE_CATALYST =
             RegisterBlockEntityType("dense_furnace_catalyst_entity",
                 DenseFurnaceCatalystEntity::new,
                 ModBlocks.DENSE_FURNACE_CATALYST);
-    public static final BlockEntityType<FurnaceEfficiencyEnhancerEntity> FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE =
+    public static final BlockEntityType<FurnaceEfficiencyEnhancerEntity> FURNACE_EFFICIENCER =
             RegisterBlockEntityType("furnace_efficiency_enhancer_entity",
                 FurnaceEfficiencyEnhancerEntity::new,
                 ModBlocks.FURNACE_EFFICIENCY_ENHANCER);
-    public static final BlockEntityType<DenseFurnaceEfficiencyEnhancerEntity> DENSE_FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE =
+    public static final BlockEntityType<DenseFurnaceEfficiencyEnhancerEntity> DENSE_FURNACE_EFFICIENCER =
             RegisterBlockEntityType("dense_furnace_efficiency_enhancer_entity",
                 DenseFurnaceEfficiencyEnhancerEntity::new,
                 ModBlocks.DENSE_FURNACE_EFFICIENCY_ENHANCER);
