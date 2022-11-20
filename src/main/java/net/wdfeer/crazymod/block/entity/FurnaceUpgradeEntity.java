@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 
 public abstract class FurnaceUpgradeEntity extends BlockEntity {
-    public FurnaceUpgradeEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+    public FurnaceUpgradeEntity(BlockEntityType type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
     @SuppressWarnings("unused")

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XYX",
+    "XYX"
+  ],
+  "key": {
+    "Y": {
+      "item": "crazymod:furnace_efficiency_enhancer"
+    },
+    "X": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "crazymod:dense_furnace_efficiency_enhancer",
+    "count": 1
+  }
+}
+

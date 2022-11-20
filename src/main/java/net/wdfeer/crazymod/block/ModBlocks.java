@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.block.custom.DenseFurnaceCatalyst;
+import net.wdfeer.crazymod.block.custom.DenseFurnaceEfficiencyEnhancer;
 import net.wdfeer.crazymod.block.custom.FurnaceCatalyst;
 import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancer;
 
@@ -25,6 +26,9 @@ public class ModBlocks {
             ItemGroup.DECORATIONS);
     public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
             new FurnaceEfficiencyEnhancer(),
+            ItemGroup.DECORATIONS);
+    public static final Block DENSE_FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("dense_furnace_efficiency_enhancer",
+            new DenseFurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS);
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {
