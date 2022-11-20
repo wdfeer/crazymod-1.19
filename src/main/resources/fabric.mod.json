@@ -4,13 +4,13 @@
   "version": "${version}",
 
   "name": "Crazy Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "My first Minecraft mod which adds random stuff",
   "authors": [
     "wdfeer"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/wdfeer/crazymod-1.19",
+    "sources": "https://github.com/wdfeer/crazymod-1.19"
   },
 
   "license": "MIT",
