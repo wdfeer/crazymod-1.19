@@ -5,9 +5,9 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.block.custom.DenseFurnaceCatalystEntity;
-import net.wdfeer.crazymod.block.custom.FurnaceCatalystEntity;
-import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancerEntity;
+import net.wdfeer.crazymod.block.entity.DenseFurnaceCatalystEntity;
+import net.wdfeer.crazymod.block.entity.FurnaceCatalystEntity;
+import net.wdfeer.crazymod.block.entity.FurnaceEfficiencyEnhancerEntity;
 
 public class ModBlockEntities {
     public static final BlockEntityType<FurnaceCatalystEntity> FURNACE_CATALYST_ENTITY_TYPE = Registry.register(Registry.BLOCK_ENTITY_TYPE,

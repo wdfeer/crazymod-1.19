@@ -8,6 +8,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.block.ModBlockEntities;
+import net.wdfeer.crazymod.block.entity.FurnaceEfficiencyEnhancerEntity;
+import net.wdfeer.crazymod.block.entity.FurnaceUpgradeEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class FurnaceEfficiencyEnhancer extends BlockWithEntity implements BlockEntityProvider {

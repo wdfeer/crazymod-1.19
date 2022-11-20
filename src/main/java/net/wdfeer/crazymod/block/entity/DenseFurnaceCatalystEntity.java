@@ -1,4 +1,4 @@
-package net.wdfeer.crazymod.block.custom;
+package net.wdfeer.crazymod.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
