@@ -1,9 +1,9 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:blasting",
   "ingredient": {
     "item": "crazymod:titanium_cluster"
   },
   "result": "crazymod:titanium_ingot",
-  "experience": 6,
-  "cookingtime": 220
+  "experience": 5,
+  "cookingtime": 100
 }
