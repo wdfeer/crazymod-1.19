@@ -19,6 +19,6 @@ public class DenseFurnaceCatalyst extends FurnaceCatalyst {
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type,
                 ModBlockEntities.DENSE_FURNACE_CATALYST_ENTITY_TYPE,
-                FurnaceCatalystEntity::tick);
+                FurnaceUpgradeEntity::tick);
     }
 }

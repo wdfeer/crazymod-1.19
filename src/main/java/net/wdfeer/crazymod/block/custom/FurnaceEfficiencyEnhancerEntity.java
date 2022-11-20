@@ -3,8 +3,10 @@ package net.wdfeer.crazymod.block.custom;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.block.ModBlockEntities;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
@@ -32,17 +34,31 @@ public class FurnaceEfficiencyEnhancerEntity extends FurnaceUpgradeEntity {
 
         int ticks = FurnaceCatalystEntity.getAllExtraTicks(upgrades) + 1;
 
-        for (int i = 0; i < ticks; i++) {
-            tryAddBurnTime(furnace, world.random, failChance);
-        }
+        addBurnTicks(furnace, world.random, failChance, ticks);
     }
-    private static void tryAddBurnTime(AbstractFurnaceBlockEntity furnace, net.minecraft.util.math.random.Random random, float failChance){
-        Field burnTime = FieldUtils.getField(AbstractFurnaceBlockEntity.class, "burnTime", true);
-        try {
-            int current = (int)burnTime.get(furnace);
+    private static void addBurnTicks(AbstractFurnaceBlockEntity furnace, net.minecraft.util.math.random.Random random, float failChance, int times){
+        PropertyDelegate propertyDelegate = null;
+        var fields = FieldUtils.getAllFields(AbstractFurnaceBlockEntity.class);
+        for (Field f : fields) {
+            f.setAccessible(true);
+            try {
+                if (f.get(furnace) instanceof PropertyDelegate delegate){
+                    if (delegate.get(0) <= 0)
+                        continue;
+                    propertyDelegate = delegate;
+                    break;
+                }
+            } catch (IllegalAccessException ignored) {}
+        }
+        if (propertyDelegate == null){
+            CrazyMod.LOGGER.error("Failed to find a PropertyDelegate field in the AbstractFurnaceBlockEntity class");
+            return;
+        }
+        for (int i = 0; i < times; i++) {
+            int current = propertyDelegate.get(0);
             if (current > 0 && random.nextFloat() > failChance){
-                burnTime.set(furnace, current + 1);
+                propertyDelegate.set(0, current + 1);
             }
-        } catch (IllegalAccessException ignored) {}
+        }
     }
 }

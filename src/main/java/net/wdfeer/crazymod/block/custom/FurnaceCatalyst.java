@@ -30,6 +30,6 @@ public class FurnaceCatalyst extends BlockWithEntity implements BlockEntityProvi
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type,
                 ModBlockEntities.FURNACE_CATALYST_ENTITY_TYPE,
-                FurnaceCatalystEntity::tick);
+                FurnaceUpgradeEntity::tick);
     }
 }

@@ -30,6 +30,6 @@ public class FurnaceEfficiencyEnhancer extends BlockWithEntity implements BlockE
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type,
                 ModBlockEntities.FURNACE_EFFICIENCY_ENHANCER_ENTITY_TYPE,
-                FurnaceEfficiencyEnhancerEntity::tick);
+                FurnaceUpgradeEntity::tick);
     }
 }
