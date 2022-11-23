@@ -102,7 +102,7 @@ public class TitaniumDrill extends ToolItem {
                         if (newState.isAir()) continue;
                         float newHard = newState.getHardness(world.getChunk(newPos), newPos);
                         if (isCompatibleMiningLevel(newState) && isSuitableFor(newState) && newHard < hard * 3f) {
-                            world.breakBlock(newPos, true);
+                            world.breakBlock(newPos, true, miner);
                             if (newHard > 0f) damage(stack, miner);
                         }
                     }
