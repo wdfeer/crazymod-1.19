@@ -21,7 +21,7 @@ public class ModOres {
     private static final ConfiguredFeature<?, ?> NETHER_TITANIUM_ORE_CONFIGURED_FEATURE = new ConfiguredFeature<>
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.NETHERRACK,
-                    ModBlocks.TITANIUM_OREBLOCK.getDefaultState(),
+                    ModBlocks.TITANIUM_ORE_BLOCK.getDefaultState(),
                     7));
 
     public static PlacedFeature NETHER_TITANIUM_ORE_PLACED_FEATURE = new PlacedFeature(
@@ -32,11 +32,11 @@ public class ModOres {
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(32))));
     public static void Initialize() {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
-                new Identifier("crazymod", "titanium_oreblock"), NETHER_TITANIUM_ORE_CONFIGURED_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier("crazymod", "titanium_oreblock"),
+                new Identifier("crazymod", "titanium_ore_block"), NETHER_TITANIUM_ORE_CONFIGURED_FEATURE);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier("crazymod", "titanium_ore_block"),
                 NETHER_TITANIUM_ORE_PLACED_FEATURE);
         BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES,
                 RegistryKey.of(Registry.PLACED_FEATURE_KEY,
-                        new Identifier("crazymod", "titanium_oreblock")));
+                        new Identifier("crazymod", "titanium_ore_block")));
     }
 }

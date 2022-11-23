@@ -1,7 +1,7 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "item": "crazymod:titanium_oreblock"
+    "item": "crazymod:titanium_ore_block"
   },
   "result": "crazymod:titanium_cluster",
   "experience": 2,

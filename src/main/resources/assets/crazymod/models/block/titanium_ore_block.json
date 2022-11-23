@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "crazymod:block/titanium_oreblock"
+    "all": "crazymod:block/titanium_ore_block"
   }
 }
