@@ -21,7 +21,7 @@ public class AmethystStaff extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         var stack = user.getStackInHand(hand);
         if(!world.isClient()) {
-            user.getItemCooldownManager().set(this, 25);
+            user.getItemCooldownManager().set(this, 20);
             var projectile = new AmethystStaffProjectile(user, world);
             projectile.setOwner(user);
             projectile.setPosition(user.getEyePos());

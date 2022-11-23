@@ -21,24 +21,24 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
     public static final Item TITANIUM_INGOT = RegisterItem("titanium_ingot",
             new Item(new FabricItemSettings().group(ItemGroup.MATERIALS).fireproof()));
-    public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
-            new SwordItem(TitaniumMaterial.INSTANCE, 8, -2.4f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item TITANIUM_PICKAXE = RegisterItem("titanium_pickaxe",
-            new PickaxeItem(TitaniumMaterial.INSTANCE, 5, -2.5f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
+            new PickaxeItem(TitaniumMaterial.INSTANCE, 6, -2.4f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
             new TitaniumDrill());
     public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
             new TitaniumRepeater());
-    public static final Item COPPER_BOW = RegisterItem("copper_bow",
-            new CopperBow());
+    public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
+            new SwordItem(TitaniumMaterial.INSTANCE, 8, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item EXCALIBUR = RegisterItem("excalibur",
-            new SwordItem(HallowedMaterial.INSTANCE, 10, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
+            new SwordItem(HallowedMaterial.INSTANCE, 9, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item BONE_SWORD = RegisterItem("bone_sword",
-            new SwordItem(BoneMaterial.INSTANCE, 5, -2.25f, new FabricItemSettings().group(ItemGroup.COMBAT)));
-    public static final Item WAND_OF_SPARKING = RegisterItem("wand_of_sparking",
-            new WandOfSparking());
+            new SwordItem(BoneMaterial.INSTANCE, 5, -2.2f, new FabricItemSettings().group(ItemGroup.COMBAT)));
     public static final Item BLADE_OF_GRASS = RegisterItem("blade_of_grass",
             new BladeOfGrass());
+    public static final Item COPPER_BOW = RegisterItem("copper_bow",
+            new CopperBow());
+    public static final Item WAND_OF_SPARKING = RegisterItem("wand_of_sparking",
+            new WandOfSparking());
     public static final Item AMETHYST_STAFF = RegisterItem("amethyst_staff",
             new AmethystStaff());
     static Item RegisterItem(String name, Item item)
