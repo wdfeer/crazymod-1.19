@@ -10,22 +10,22 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.wdfeer.crazymod.entity.AmethystStaffProjectile;
+import net.wdfeer.crazymod.entity.EmeraldStaffProjectile;
 
-public class AmethystStaff extends Item {
-    public AmethystStaff() {
-        super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(120));
+public class EmeraldStaff extends Item {
+    public EmeraldStaff() {
+        super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(256));
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         var stack = user.getStackInHand(hand);
         if(!world.isClient()) {
-            user.getItemCooldownManager().set(this, 20);
-            var projectile = new AmethystStaffProjectile(user, world);
+            user.getItemCooldownManager().set(this, 16);
+            var projectile = new EmeraldStaffProjectile(user, world);
             projectile.setOwner(user);
             projectile.setPosition(user.getEyePos());
-            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 0.5f, 0.2f);
+            projectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 0.55f, 0.2f);
             world.spawnEntity(projectile);
             stack.damage(1, user, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }

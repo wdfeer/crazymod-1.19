@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " S ",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:emerald"
+    },
+    "S": {
+      "tag": "c:tungsten_ingots"
+    }
+  },
+  "result": {
+    "item": "crazymod:emerald_staff",
+    "count": 1
+  }
+}
+
