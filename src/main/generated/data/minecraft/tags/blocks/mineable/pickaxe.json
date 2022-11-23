@@ -2,9 +2,10 @@
   "replace": false,
   "values": [
     "crazymod:titanium_ore_block",
+    "crazymod:tungsten_ore_block",
     "crazymod:furnace_catalyst",
-    "crazymod:dense_furnace_catalyst",
     "crazymod:furnace_efficiency_enhancer",
+    "crazymod:dense_furnace_catalyst",
     "crazymod:dense_furnace_efficiency_enhancer"
   ]
 }

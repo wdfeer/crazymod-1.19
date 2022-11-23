@@ -23,6 +23,9 @@
     ],
     "client": [
       "net.wdfeer.crazymod.CrazyClientMod"
+    ],
+    "fabric-datagen": [
+      "net.wdfeer.crazymod.CrazyDatagen"
     ]
   },
   "mixins": [

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "crazymod:tungsten_cluster"
+  },
+  "result": "crazymod:tungsten_ingot",
+  "experience": 25,
+  "cookingtime": 12000
+}

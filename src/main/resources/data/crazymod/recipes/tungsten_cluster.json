@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OO",
+    "OO"
+  ],
+  "key": {
+    "O": {
+      "item": "crazymod:tungsten_ore"
+    }
+  },
+  "result": {
+    "item": "crazymod:tungsten_cluster",
+    "count": 1
+  }
+}
+

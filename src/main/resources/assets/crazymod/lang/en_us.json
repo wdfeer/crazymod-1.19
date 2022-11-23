@@ -1,5 +1,6 @@
 {
   "block.crazymod.titanium_ore_block": "Titanium Ore Block",
+  "block.crazymod.tungsten_ore_block": "Tungsten Ore Block",
   "block.crazymod.furnace_catalyst": "Furnace Catalyst",
   "block.crazymod.dense_furnace_catalyst": "Dense Furnace Catalyst",
   "block.crazymod.furnace_efficiency_enhancer": "Furnace Efficiency Enhancer",
@@ -16,5 +17,8 @@
   "item.crazymod.bone_sword": "Bone Sword",
   "item.crazymod.wand_of_sparking": "Wand of Sparking",
   "item.crazymod.blade_of_grass": "Blade of Grass",
-  "item.crazymod.amethyst_staff": "Amethyst Staff"
+  "item.crazymod.amethyst_staff": "Amethyst Staff",
+  "item.crazymod.tungsten_ore": "Tungsten Ore",
+  "item.crazymod.tungsten_cluster": "Tungsten Cluster",
+  "item.crazymod.tungsten_ingot": "Tungsten Ingot"
 }
