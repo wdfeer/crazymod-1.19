@@ -21,7 +21,7 @@ public class EmeraldStaff extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         var stack = user.getStackInHand(hand);
         if(!world.isClient()) {
-            user.getItemCooldownManager().set(this, 16);
+            user.getItemCooldownManager().set(this, 17);
             var projectile = new EmeraldStaffProjectile(user, world);
             projectile.setOwner(user);
             projectile.setPosition(user.getEyePos());

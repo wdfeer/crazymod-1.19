@@ -2,8 +2,8 @@ package net.wdfeer.crazymod;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.wdfeer.crazymod.util.ModBlockTagGenerator;
-import net.wdfeer.crazymod.util.ModItemTagGenerator;
+import net.wdfeer.crazymod.datagen.ModBlockTagGenerator;
+import net.wdfeer.crazymod.datagen.ModItemTagGenerator;
 
 public class CrazyDatagen implements DataGeneratorEntrypoint {
     @Override

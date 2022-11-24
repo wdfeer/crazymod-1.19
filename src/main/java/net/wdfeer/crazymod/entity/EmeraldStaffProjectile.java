@@ -15,7 +15,7 @@ public class EmeraldStaffProjectile extends StaffProjectile {
 
     @Override
     public float getDamage() {
-        return 13f;
+        return 12f;
     }
 
     @Override

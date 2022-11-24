@@ -1,4 +1,4 @@
-package net.wdfeer.crazymod.util;
+package net.wdfeer.crazymod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
