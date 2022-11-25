@@ -14,6 +14,8 @@ import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
 public class ModItems {
+    public static final Item COPPER_HAMMER = RegisterItem("copper_hammer",
+            new CopperHammer());
     public static final Item TUNGSTEN_ORE = RegisterItem("tungsten_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC)));
     public static final Item TUNGSTEN_CLUSTER = RegisterItem("tungsten_cluster",
