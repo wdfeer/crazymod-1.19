@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "crazymod:tungsten_ore_block"
+  },
+  "result": "crazymod:tungsten_cluster",
+  "experience": 10,
+  "cookingtime": 72000
+}
