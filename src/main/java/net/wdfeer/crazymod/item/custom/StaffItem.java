@@ -3,9 +3,11 @@ package net.wdfeer.crazymod.item.custom;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
@@ -14,9 +16,34 @@ import net.minecraft.world.World;
 import net.wdfeer.crazymod.entity.StaffProjectile;
 import net.wdfeer.crazymod.util.ModSounds;
 
-public abstract class StaffItem extends Item {
+public abstract class StaffItem extends ToolItem {
     public StaffItem(int durability) {
-        super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(durability));
+        super(new ToolMaterial() {
+            @Override
+            public int getDurability() {
+                return durability;
+            }
+            @Override
+            public float getMiningSpeedMultiplier() {
+                return 0;
+            }
+            @Override
+            public float getAttackDamage() {
+                return 0;
+            }
+            @Override
+            public int getMiningLevel() {
+                return 0;
+            }
+            @Override
+            public int getEnchantability() {
+                return 20;
+            }
+            @Override
+            public Ingredient getRepairIngredient() {
+                return null;
+            }
+        }, new FabricItemSettings().group(ItemGroup.COMBAT));
     }
     public abstract int getCooldown();
     public abstract StaffProjectile createProjectile(World world, PlayerEntity user);
