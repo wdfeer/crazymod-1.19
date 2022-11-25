@@ -1,45 +1,33 @@
 package net.wdfeer.crazymod.item.custom;
 
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.MiningToolItem;
 import net.minecraft.tag.BlockTags;
+import net.minecraft.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.toolmaterial.TitaniumDrillMaterial;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TitaniumDrill extends ToolItem {
-    private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
+public class TitaniumDrill extends MiningToolItem {
     public TitaniumDrill() {
-        super(TitaniumDrillMaterial.INSTANCE, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof());
-        ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Tool modifier", 11, EntityAttributeModifier.Operation.ADDITION)).put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Tool modifier", -2.9, EntityAttributeModifier.Operation.ADDITION));
-        this.attributeModifiers = builder.build();
-    }
-    @Override
-    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
-        if (slot == EquipmentSlot.MAINHAND) {
-            return this.attributeModifiers;
-        }
-        return super.getAttributeModifiers(slot);
+        super(11, -2.9f,TitaniumDrillMaterial.INSTANCE, TagKey.of(Registry.BLOCK_KEY, new Identifier("")),
+                new FabricItemSettings().group(ItemGroup.TOOLS).fireproof());
     }
     public static void addTooltipLine(List<Text> tooltip, String str, Formatting formatting) {
         Text t = Text.of(str);
@@ -63,11 +51,13 @@ public class TitaniumDrill extends ToolItem {
     public boolean isSuitableFor(BlockState state) {
         return state.streamTags().anyMatch(tag -> tag == BlockTags.PICKAXE_MINEABLE || tag == BlockTags.SHOVEL_MINEABLE);
     }
-
+    @Override
+    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
+        return isSuitableFor(state) ? (this.getMaterial().getMiningSpeedMultiplier() * (excavation ? 0.16f : 1f)) : 1f;
+    }
     private boolean isCompatibleMiningLevel(BlockState state) {
         return state.streamTags().noneMatch(tag -> tag == BlockTags.NEEDS_IRON_TOOL || tag == BlockTags.NEEDS_DIAMOND_TOOL);
     }
-
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         return isCompatibleMiningLevel(state);
@@ -113,8 +103,4 @@ public class TitaniumDrill extends ToolItem {
         return hard > 0f;
     }
 
-    @Override
-    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return isSuitableFor(state) ? (this.getMaterial().getMiningSpeedMultiplier() * (excavation ? 0.15f : 1f)) : 1f;
-    }
 }
