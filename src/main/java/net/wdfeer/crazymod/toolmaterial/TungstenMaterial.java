@@ -5,17 +5,17 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.wdfeer.crazymod.item.ModItems;
 
-public class TitaniumMaterial implements ToolMaterial {
-    public static final TitaniumMaterial INSTANCE = new TitaniumMaterial();
+public class TungstenMaterial implements ToolMaterial {
+    public static final TungstenMaterial INSTANCE = new TungstenMaterial();
 
     @Override
     public int getDurability() {
-        return 2600;
+        return 3600;
     }
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 8.25f;
+        return 7.5f;
     }
 
     @Override
@@ -30,11 +30,11 @@ public class TitaniumMaterial implements ToolMaterial {
 
     @Override
     public int getEnchantability() {
-        return 12;
+        return 9;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.TITANIUM_INGOT);
+        return Ingredient.ofItems(ModItems.TUNGSTEN_INGOT);
     }
 }

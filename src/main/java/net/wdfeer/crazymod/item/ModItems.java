@@ -20,7 +20,8 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ItemGroup.MISC)));
     public static final Item TUNGSTEN_INGOT = RegisterItem("tungsten_ingot",
             new Item(new FabricItemSettings().group(ItemGroup.MATERIALS)));
-
+    public static final Item TUNGSTEN_PICKAXE = RegisterItem("tungsten_pickaxe",
+            new TungstenPickaxe());
     public static final Item TITANIUM_ORE = RegisterItem("titanium_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
     public static final Item TITANIUM_CLUSTER = RegisterItem("titanium_cluster",
