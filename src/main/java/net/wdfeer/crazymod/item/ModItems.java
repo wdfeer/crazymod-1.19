@@ -10,12 +10,13 @@ import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
 import net.wdfeer.crazymod.item.custom.*;
 import net.wdfeer.crazymod.toolmaterial.BoneMaterial;
+import net.wdfeer.crazymod.toolmaterial.CopperMaterial;
 import net.wdfeer.crazymod.toolmaterial.HallowedMaterial;
 import net.wdfeer.crazymod.toolmaterial.TitaniumMaterial;
 
 public class ModItems {
     public static final Item COPPER_HAMMER = RegisterItem("copper_hammer",
-            new CopperHammer());
+            new HammerItem(9, CopperMaterial.INSTANCE));
     public static final Item TUNGSTEN_ORE = RegisterItem("tungsten_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC)));
     public static final Item TUNGSTEN_CLUSTER = RegisterItem("tungsten_cluster",

@@ -12,9 +12,9 @@ import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public abstract class HammerItem extends MiningToolItem {
-    public HammerItem(float attackDamage, float attackSpeed, ToolMaterial material) {
-        super(attackDamage, attackSpeed, material, TagKey.of(Registry.BLOCK_KEY, new Identifier("minecraft:mineable/pickaxe")), new FabricItemSettings().group(ItemGroup.TOOLS));
+public class HammerItem extends MiningToolItem {
+    public HammerItem(float attackDamage, ToolMaterial material) {
+        super(attackDamage, -3f, material, TagKey.of(Registry.BLOCK_KEY, new Identifier("minecraft:mineable/pickaxe")), new FabricItemSettings().group(ItemGroup.TOOLS));
     }
 
     @Override

@@ -9,7 +9,7 @@ import net.wdfeer.crazymod.toolmaterial.TungstenMaterial;
 
 public class TungstenHammer extends HammerItem {
     public TungstenHammer() {
-        super(13, -3f, TungstenMaterial.INSTANCE);
+        super(13, TungstenMaterial.INSTANCE);
     }
 
     @Override
