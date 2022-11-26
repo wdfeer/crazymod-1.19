@@ -21,6 +21,10 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("iron_furnace_catalyst_entity",
                     IronFurnaceCatalystEntity::new,
                     ModBlocks.IRON_FURNACE_CATALYST);
+    public static final BlockEntityType<DenseIronFurnaceCatalystEntity> DENSE_IRON_FURNACE_CATALYST =
+            RegisterBlockEntityType("dense_iron_furnace_catalyst_entity",
+                    DenseIronFurnaceCatalystEntity::new,
+                    ModBlocks.DENSE_IRON_FURNACE_CATALYST);
     public static final BlockEntityType<FurnaceEfficiencyEnhancerEntity> FURNACE_EFFICIENCER =
             RegisterBlockEntityType("furnace_efficiency_enhancer_entity",
                 FurnaceEfficiencyEnhancerEntity::new,

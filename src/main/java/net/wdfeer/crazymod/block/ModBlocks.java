@@ -27,6 +27,9 @@ public class ModBlocks {
     public static final Block IRON_FURNACE_CATALYST = RegisterBlock("iron_furnace_catalyst",
             new IronFurnaceCatalyst(),
             ItemGroup.DECORATIONS);
+    public static final Block DENSE_IRON_FURNACE_CATALYST = RegisterBlock("dense_iron_furnace_catalyst",
+            new DenseIronFurnaceCatalyst(),
+            ItemGroup.DECORATIONS);
     public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
             new FurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS);
@@ -37,7 +40,7 @@ public class ModBlocks {
         return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
     }
     public static Block[] getMineableBlocks(){
-        return new Block[] {TITANIUM_ORE_BLOCK, TUNGSTEN_ORE_BLOCK, FURNACE_CATALYST, FURNACE_EFFICIENCY_ENHANCER, DENSE_FURNACE_CATALYST, DENSE_FURNACE_EFFICIENCY_ENHANCER};
+        return new Block[] {TITANIUM_ORE_BLOCK, TUNGSTEN_ORE_BLOCK, FURNACE_CATALYST, FURNACE_EFFICIENCY_ENHANCER, DENSE_FURNACE_CATALYST, DENSE_FURNACE_EFFICIENCY_ENHANCER, IRON_FURNACE_CATALYST, DENSE_IRON_FURNACE_CATALYST};
     }
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {
