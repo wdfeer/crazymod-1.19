@@ -26,6 +26,8 @@ public class ModItems {
             new TungstenPickaxe());
     public static final Item TUNGSTEN_HAMMER = RegisterItem("tungsten_hammer",
             new TungstenHammer());
+    public static final Item TUNGSTEN_SHORTSWORD = RegisterItem("tungsten_shortsword",
+            new TungstenShortsword());
     public static final Item TITANIUM_ORE = RegisterItem("titanium_ore",
             new Item(new FabricItemSettings().group(ItemGroup.MISC).fireproof()));
     public static final Item TITANIUM_CLUSTER = RegisterItem("titanium_cluster",
@@ -38,6 +40,8 @@ public class ModItems {
             new TitaniumDrill());
     public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
             new TitaniumRepeater());
+
+
     public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
             new SwordItem(TitaniumMaterial.INSTANCE, 8, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item EXCALIBUR = RegisterItem("excalibur",
