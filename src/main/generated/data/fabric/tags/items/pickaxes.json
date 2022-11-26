@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "crazymod:tungsten_pickaxe",
+    "crazymod:titanium_pickaxe",
+    "crazymod:copper_hammer",
+    "crazymod:tungsten_hammer",
+    "crazymod:titanium_drill"
+  ]
+}

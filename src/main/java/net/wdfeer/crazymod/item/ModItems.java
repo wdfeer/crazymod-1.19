@@ -60,6 +60,9 @@ public class ModItems {
             new AmethystStaff());
     public static final Item EMERALD_STAFF = RegisterItem("emerald_staff",
             new EmeraldStaff());
+    public static Item[] getPickaxes(){
+        return new Item[] {TUNGSTEN_PICKAXE, TITANIUM_PICKAXE, COPPER_HAMMER, TUNGSTEN_HAMMER, TITANIUM_DRILL};
+    }
     public static Item[] getGeneratedModelItems(){
         return new Item[] {TUNGSTEN_ORE, TUNGSTEN_CLUSTER, TUNGSTEN_INGOT, TITANIUM_ORE, TITANIUM_CLUSTER, TITANIUM_INGOT};
     }
