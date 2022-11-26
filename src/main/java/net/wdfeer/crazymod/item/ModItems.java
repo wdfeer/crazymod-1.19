@@ -38,26 +38,33 @@ public class ModItems {
             new PickaxeItem(TitaniumMaterial.INSTANCE, 6, -2.4f, new FabricItemSettings().group(ItemGroup.TOOLS).fireproof()));
     public static final Item TITANIUM_DRILL = RegisterItem("titanium_drill",
             new TitaniumDrill());
-    public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
-            new TitaniumRepeater());
-
 
     public static final Item TITANIUM_SWORD = RegisterItem("titanium_sword",
             new SwordItem(TitaniumMaterial.INSTANCE, 8, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
+    public static final Item TITANIUM_REPEATER = RegisterItem("titanium_repeater",
+            new TitaniumRepeater());
     public static final Item EXCALIBUR = RegisterItem("excalibur",
             new SwordItem(HallowedMaterial.INSTANCE, 9, -2.5f, new FabricItemSettings().group(ItemGroup.COMBAT).fireproof()));
     public static final Item BONE_SWORD = RegisterItem("bone_sword",
             new SwordItem(BoneMaterial.INSTANCE, 5, -2.2f, new FabricItemSettings().group(ItemGroup.COMBAT)));
     public static final Item BLADE_OF_GRASS = RegisterItem("blade_of_grass",
             new BladeOfGrass());
+
     public static final Item COPPER_BOW = RegisterItem("copper_bow",
             new CopperBow());
+
     public static final Item WAND_OF_SPARKING = RegisterItem("wand_of_sparking",
             new WandOfSparking());
     public static final Item AMETHYST_STAFF = RegisterItem("amethyst_staff",
             new AmethystStaff());
     public static final Item EMERALD_STAFF = RegisterItem("emerald_staff",
             new EmeraldStaff());
+    public static Item[] getGeneratedModelItems(){
+        return new Item[] {TUNGSTEN_ORE, TUNGSTEN_CLUSTER, TUNGSTEN_INGOT, TITANIUM_ORE, TITANIUM_CLUSTER, TITANIUM_INGOT};
+    }
+    public static Item[] getHandheldItems(){
+        return new Item[] {COPPER_HAMMER, TUNGSTEN_PICKAXE, TUNGSTEN_SHORTSWORD, TUNGSTEN_HAMMER, TITANIUM_PICKAXE, TITANIUM_DRILL, TITANIUM_SWORD, TITANIUM_REPEATER, EXCALIBUR, BONE_SWORD, BLADE_OF_GRASS, WAND_OF_SPARKING, AMETHYST_STAFF, EMERALD_STAFF};
+    }
     static Item RegisterItem(String name, Item item)
     {
         return Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);

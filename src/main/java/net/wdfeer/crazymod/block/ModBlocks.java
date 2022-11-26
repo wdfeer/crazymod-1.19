@@ -33,6 +33,9 @@ public class ModBlocks {
     public static final Block DENSE_FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("dense_furnace_efficiency_enhancer",
             new DenseFurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS);
+    public static Block[] getCubeAllModelBlocks(){
+        return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
+    }
     public static Block[] getMineableBlocks(){
         return new Block[] {TITANIUM_ORE_BLOCK, TUNGSTEN_ORE_BLOCK, FURNACE_CATALYST, FURNACE_EFFICIENCY_ENHANCER, DENSE_FURNACE_CATALYST, DENSE_FURNACE_EFFICIENCY_ENHANCER};
     }
