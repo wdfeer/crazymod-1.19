@@ -9,10 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.block.custom.DenseFurnaceCatalyst;
-import net.wdfeer.crazymod.block.custom.DenseFurnaceEfficiencyEnhancer;
-import net.wdfeer.crazymod.block.custom.FurnaceCatalyst;
-import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancer;
+import net.wdfeer.crazymod.block.custom.*;
 
 public class ModBlocks {
     public static final Block TUNGSTEN_ORE_BLOCK = RegisterBlock("tungsten_ore_block",
@@ -26,6 +23,9 @@ public class ModBlocks {
             ItemGroup.DECORATIONS);
     public static final Block DENSE_FURNACE_CATALYST = RegisterBlock("dense_furnace_catalyst",
             new DenseFurnaceCatalyst(),
+            ItemGroup.DECORATIONS);
+    public static final Block IRON_FURNACE_CATALYST = RegisterBlock("iron_furnace_catalyst",
+            new IronFurnaceCatalyst(),
             ItemGroup.DECORATIONS);
     public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
             new FurnaceEfficiencyEnhancer(),

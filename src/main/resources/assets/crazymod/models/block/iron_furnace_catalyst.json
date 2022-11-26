@@ -1,0 +1,7 @@
+{
+  "parent": "crazymod:block/furnace_catalyst",
+  "textures": {
+    "front": "crazymod:block/iron_furnace_catalyst_side",
+    "side": "crazymod:block/iron_furnace_catalyst_side"
+  }
+}

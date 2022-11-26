@@ -6,10 +6,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.block.entity.DenseFurnaceCatalystEntity;
-import net.wdfeer.crazymod.block.entity.DenseFurnaceEfficiencyEnhancerEntity;
-import net.wdfeer.crazymod.block.entity.FurnaceCatalystEntity;
-import net.wdfeer.crazymod.block.entity.FurnaceEfficiencyEnhancerEntity;
+import net.wdfeer.crazymod.block.entity.*;
 
 public class ModBlockEntityTypes {
     public static final BlockEntityType<FurnaceCatalystEntity> FURNACE_CATALYST =
@@ -20,6 +17,10 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("dense_furnace_catalyst_entity",
                 DenseFurnaceCatalystEntity::new,
                 ModBlocks.DENSE_FURNACE_CATALYST);
+    public static final BlockEntityType<IronFurnaceCatalystEntity> IRON_FURNACE_CATALYST =
+            RegisterBlockEntityType("iron_furnace_catalyst_entity",
+                    IronFurnaceCatalystEntity::new,
+                    ModBlocks.IRON_FURNACE_CATALYST);
     public static final BlockEntityType<FurnaceEfficiencyEnhancerEntity> FURNACE_EFFICIENCER =
             RegisterBlockEntityType("furnace_efficiency_enhancer_entity",
                 FurnaceEfficiencyEnhancerEntity::new,
