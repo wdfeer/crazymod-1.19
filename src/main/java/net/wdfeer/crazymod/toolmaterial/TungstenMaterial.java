@@ -25,7 +25,7 @@ public class TungstenMaterial implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return MiningLevels.NETHERITE;
+        return MiningLevels.DIAMOND;
     }
 
     @Override

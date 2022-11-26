@@ -26,7 +26,7 @@ import java.util.List;
 
 public class TitaniumDrill extends MiningToolItem {
     public TitaniumDrill() {
-        super(11, -2.9f,TitaniumDrillMaterial.INSTANCE, TagKey.of(Registry.BLOCK_KEY, new Identifier("")),
+        super(10, -3f,TitaniumDrillMaterial.INSTANCE, TagKey.of(Registry.BLOCK_KEY, new Identifier("")),
                 new FabricItemSettings().group(ItemGroup.TOOLS).fireproof());
     }
     public static void addTooltipLine(List<Text> tooltip, String str, Formatting formatting) {

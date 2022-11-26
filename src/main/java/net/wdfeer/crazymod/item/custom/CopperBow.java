@@ -15,13 +15,14 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.wdfeer.crazymod.toolmaterial.CopperMaterial;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class CopperBow extends BowItem {
     public CopperBow() {
-        super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(512));
+        super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(CopperMaterial.INSTANCE.getDurability()));
     }
     public final float FREE_SHOT_CHANCE = 0.75f;
     @Override

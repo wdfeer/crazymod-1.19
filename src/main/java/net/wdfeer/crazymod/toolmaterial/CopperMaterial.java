@@ -5,16 +5,16 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class CopperHammerMaterial implements ToolMaterial {
-    public static final CopperHammerMaterial INSTANCE = new CopperHammerMaterial();
+public class CopperMaterial implements ToolMaterial {
+    public static final CopperMaterial INSTANCE = new CopperMaterial();
     @Override
     public int getDurability() {
-        return 480;
+        return 512;
     }
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 4f;
+        return 3.6f;
     }
 
     @Override

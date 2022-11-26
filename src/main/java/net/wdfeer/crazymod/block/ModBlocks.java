@@ -15,11 +15,11 @@ import net.wdfeer.crazymod.block.custom.FurnaceCatalyst;
 import net.wdfeer.crazymod.block.custom.FurnaceEfficiencyEnhancer;
 
 public class ModBlocks {
-    public static final Block TITANIUM_ORE_BLOCK = RegisterBlock("titanium_ore_block",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(7f, 25f).requiresTool()),
-            ItemGroup.BUILDING_BLOCKS);
     public static final Block TUNGSTEN_ORE_BLOCK = RegisterBlock("tungsten_ore_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(8f, 40f).requiresTool()),
+            ItemGroup.BUILDING_BLOCKS);
+    public static final Block TITANIUM_ORE_BLOCK = RegisterBlock("titanium_ore_block",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(7f, 25f).requiresTool()),
             ItemGroup.BUILDING_BLOCKS);
     public static final Block FURNACE_CATALYST = RegisterBlock("furnace_catalyst",
             new FurnaceCatalyst(),
