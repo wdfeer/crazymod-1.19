@@ -10,7 +10,7 @@
       "item": "minecraft:redstone_block"
     },
     "X": {
-      "tag": "fabric:saplings"
+      "tag": "minecraft:saplings"
     }
   },
   "result": {
