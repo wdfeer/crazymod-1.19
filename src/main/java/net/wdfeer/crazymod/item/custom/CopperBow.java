@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static net.wdfeer.crazymod.TextLine.addTooltipLine;
+
 public class CopperBow extends BowItem {
     public CopperBow() {
         super(new FabricItemSettings().group(ItemGroup.COMBAT).maxDamage(CopperMaterial.INSTANCE.getDurability()));
@@ -27,7 +29,7 @@ public class CopperBow extends BowItem {
     public final float FREE_SHOT_CHANCE = 0.75f;
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        TitaniumDrill.addTooltipLine(tooltip, (int)(FREE_SHOT_CHANCE * 100f) + "% chance not to consume ammo", Formatting.GRAY);
+        addTooltipLine(tooltip, (int)(FREE_SHOT_CHANCE * 100f) + "% chance not to consume ammo", Formatting.GRAY);
     }
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {

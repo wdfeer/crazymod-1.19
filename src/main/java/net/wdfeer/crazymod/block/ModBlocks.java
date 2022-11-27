@@ -6,10 +6,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
+import net.wdfeer.crazymod.TextLine;
 import net.wdfeer.crazymod.block.custom.*;
+import org.jetbrains.annotations.Nullable;
 
 public class ModBlocks {
     public static final Block TUNGSTEN_ORE_BLOCK = RegisterBlock("tungsten_ore_block",
@@ -20,22 +23,28 @@ public class ModBlocks {
             ItemGroup.BUILDING_BLOCKS);
     public static final Block FURNACE_CATALYST = RegisterBlock("furnace_catalyst",
             new FurnaceCatalyst(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+1x speed", Formatting.GRAY)});
     public static final Block DENSE_FURNACE_CATALYST = RegisterBlock("dense_furnace_catalyst",
             new DenseFurnaceCatalyst(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+3x speed", Formatting.GRAY)});
     public static final Block IRON_FURNACE_CATALYST = RegisterBlock("iron_furnace_catalyst",
             new IronFurnaceCatalyst(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+6x speed", Formatting.GRAY)});
     public static final Block DENSE_IRON_FURNACE_CATALYST = RegisterBlock("dense_iron_furnace_catalyst",
             new DenseIronFurnaceCatalyst(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+18x speed", Formatting.GRAY)});
     public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
             new FurnaceEfficiencyEnhancer(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+1x fuel efficiency", Formatting.GRAY)});
     public static final Block DENSE_FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("dense_furnace_efficiency_enhancer",
             new DenseFurnaceEfficiencyEnhancer(),
-            ItemGroup.DECORATIONS);
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("+3x fuel efficiency", Formatting.GRAY)});
     public static Block[] getCubeAllModelBlocks(){
         return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
     }
@@ -44,13 +53,22 @@ public class ModBlocks {
     }
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {
-        RegisterBlockItem(name, block, tab);
+        RegisterBlockItem(name, block, tab, null);
         return Registry.register(Registry.BLOCK, new Identifier(CrazyMod.MOD_ID, name), block);
     }
-    static void RegisterBlockItem(String name, Block block, ItemGroup tab)
+    static Block RegisterBlock(String name, Block block, ItemGroup tab, TextLine[] tooltip)
     {
-        Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(tab)));
+        RegisterBlockItem(name, block, tab, tooltip);
+        return Registry.register(Registry.BLOCK, new Identifier(CrazyMod.MOD_ID, name), block);
+    }
+    static void RegisterBlockItem(String name, Block block, ItemGroup tab, @Nullable TextLine[] tooltip)
+    {
+        BlockItem item;
+        if (tooltip == null)
+            item = new BlockItem(block, new FabricItemSettings().group(tab));
+        else
+            item = new BlockItemWithTooltip(block, new FabricItemSettings().group(tab), tooltip);
+        Registry.register(Registry.ITEM, new Identifier(CrazyMod.MOD_ID, name), item);
     }
     public static void Initialize() {}
 }

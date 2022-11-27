@@ -24,17 +24,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static net.wdfeer.crazymod.TextLine.addTooltipLine;
+
 public class TitaniumDrill extends MiningToolItem {
     public TitaniumDrill() {
         super(10, -3f,TitaniumDrillMaterial.INSTANCE, TagKey.of(Registry.BLOCK_KEY, new Identifier("")),
                 new FabricItemSettings().group(ItemGroup.TOOLS).fireproof());
     }
-    public static void addTooltipLine(List<Text> tooltip, String str, Formatting formatting) {
-        Text t = Text.of(str);
-        t = t.getWithStyle(t.getStyle().withColor(formatting)).get(0);
-        tooltip.add(t);
-    }
-
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         addTooltipLine(tooltip, "Can only mine on the level of the stone pickaxe", Formatting.GRAY);
