@@ -40,11 +40,11 @@ public class ModBlocks {
     public static final Block FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("furnace_efficiency_enhancer",
             new FurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS,
-            new TextLine[]{new TextLine("+1x fuel efficiency", Formatting.GRAY)});
+            new TextLine[]{new TextLine("+33% fuel efficiency", Formatting.GRAY)});
     public static final Block DENSE_FURNACE_EFFICIENCY_ENHANCER = RegisterBlock("dense_furnace_efficiency_enhancer",
             new DenseFurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS,
-            new TextLine[]{new TextLine("+3x fuel efficiency", Formatting.GRAY)});
+            new TextLine[]{new TextLine("+1x fuel efficiency", Formatting.GRAY)});
     public static final Block SAPLING_ACCELERATOR = RegisterBlock("sapling_accelerator",
             new SaplingAccelerator(),
             ItemGroup.DECORATIONS,
