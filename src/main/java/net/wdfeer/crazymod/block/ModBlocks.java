@@ -45,6 +45,10 @@ public class ModBlocks {
             new DenseFurnaceEfficiencyEnhancer(),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("+3x fuel efficiency", Formatting.GRAY)});
+    public static final Block SAPLING_ACCELERATOR = RegisterBlock("sapling_accelerator",
+            new SaplingAccelerator(),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 1x1x1", Formatting.GRAY), new TextLine("Speed: +1x", Formatting.GRAY)});
     public static Block[] getCubeAllModelBlocks(){
         return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
     }

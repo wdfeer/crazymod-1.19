@@ -7,19 +7,22 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.world.World;
-import net.wdfeer.crazymod.block.entity.FurnaceUpgradeEntity;
+import net.wdfeer.crazymod.block.ModBlockEntityTypes;
+import net.wdfeer.crazymod.block.entity.SaplingAcceleratorEntity;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class FurnaceUpgradeBlock extends ModBlockWithEntity {
-    public FurnaceUpgradeBlock() {
+public class SaplingAccelerator extends ModBlockWithEntity {
+    public SaplingAccelerator() {
         super(FabricBlockSettings.of(Material.STONE).strength(4.5f, 30f).requiresTool());
     }
-    public abstract BlockEntityType<? extends FurnaceUpgradeEntity> getBlockEntityType();
+    @Override
+    public BlockEntityType<? extends BlockEntity> getBlockEntityType() {
+        return ModBlockEntityTypes.SAPLING_ACCELERATOR;
+    }
+
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type,
-                getBlockEntityType(),
-                FurnaceUpgradeEntity::tick);
+        return checkType(type, ModBlockEntityTypes.SAPLING_ACCELERATOR, SaplingAcceleratorEntity::tick);
     }
 }

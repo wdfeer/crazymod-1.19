@@ -33,8 +33,12 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("dense_furnace_efficiency_enhancer_entity",
                 DenseFurnaceEfficiencyEnhancerEntity::new,
                 ModBlocks.DENSE_FURNACE_EFFICIENCY_ENHANCER);
+    public static final BlockEntityType<SaplingAcceleratorEntity> SAPLING_ACCELERATOR =
+            RegisterBlockEntityType("sapling_accelerator_entity",
+                    SaplingAcceleratorEntity::new,
+                    ModBlocks.SAPLING_ACCELERATOR);
 
-    private static <BE extends BlockEntity> BlockEntityType<BE> RegisterBlockEntityType(String name, FabricBlockEntityTypeBuilder.Factory<BE> factory, net.minecraft.block.Block block){
+    private static <T extends BlockEntity> BlockEntityType<T> RegisterBlockEntityType(String name, FabricBlockEntityTypeBuilder.Factory<T> factory, net.minecraft.block.Block block){
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(CrazyMod.MOD_ID, name),
                 FabricBlockEntityTypeBuilder.create(factory, block).build());

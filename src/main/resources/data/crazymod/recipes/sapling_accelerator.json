@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:redstone_block"
+    },
+    "X": {
+      "tag": "fabric:saplings"
+    }
+  },
+  "result": {
+    "item": "crazymod:sapling_accelerator",
+    "count": 1
+  }
+}
+
