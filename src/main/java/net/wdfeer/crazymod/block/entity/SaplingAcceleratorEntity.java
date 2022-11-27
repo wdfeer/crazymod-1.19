@@ -7,6 +7,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 
@@ -33,7 +34,8 @@ public class SaplingAcceleratorEntity extends BlockEntity {
                     if (!(blockState.getBlock() instanceof SaplingBlock))
                         continue;
                     for (int i = 0; i < instance.getExtraRandomTicks(); i++) {
-                        blockState.randomTick((ServerWorld) world, blockPos, world.random);
+                        if ((world.random.nextFloat() * 20) < world.getGameRules().get(GameRules.RANDOM_TICK_SPEED).get())
+                            blockState.randomTick((ServerWorld) world, blockPos, world.random);
                     }
                 }
             }
