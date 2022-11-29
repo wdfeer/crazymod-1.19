@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:copper_block"
+    },
+    "X": {
+      "item": "crazymod:sapling_accelerator"
+    }
+  },
+  "result": {
+    "item": "crazymod:dense_sapling_accelerator",
+    "count": 1
+  }
+}
+

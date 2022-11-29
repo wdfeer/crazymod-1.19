@@ -18,9 +18,10 @@ public class SaplingAcceleratorEntity extends BlockEntity {
     public SaplingAcceleratorEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.SAPLING_ACCELERATOR, pos, state);
     }
-    public int getExtraRandomTicks(){
+    public int getRelativeSpeedBoost(){
         return 1;
     }
+    private static float getRelativeSpeedToExtraRandomTicksRatio(){ return 4f; }
     public static void tick(World world, BlockPos pos, BlockState state, SaplingAcceleratorEntity instance){
         if (world.isClient)
             return;
@@ -33,7 +34,9 @@ public class SaplingAcceleratorEntity extends BlockEntity {
                     var blockState = world.getBlockState(blockPos);
                     if (!(blockState.getBlock() instanceof SaplingBlock))
                         continue;
-                    for (int i = 0; i < instance.getExtraRandomTicks(); i++) {
+                    for (int i = 0; i < instance.getRelativeSpeedBoost(); i++) {
+                        if (world.random.nextFloat() * getRelativeSpeedToExtraRandomTicksRatio() > 1f)
+                            continue;
                         if ((world.random.nextFloat() * 20) < world.getGameRules().get(GameRules.RANDOM_TICK_SPEED).get())
                             blockState.randomTick((ServerWorld) world, blockPos, world.random);
                     }

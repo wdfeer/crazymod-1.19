@@ -13,16 +13,16 @@ import org.jetbrains.annotations.Nullable;
 
 public class SaplingAccelerator extends ModBlockWithEntity {
     public SaplingAccelerator() {
-        super(FabricBlockSettings.of(Material.STONE).strength(4.5f, 30f).requiresTool());
+        super(FabricBlockSettings.of(Material.STONE).strength(4f, 30f).requiresTool());
     }
     @Override
-    public BlockEntityType<? extends BlockEntity> getBlockEntityType() {
+    public BlockEntityType<? extends SaplingAcceleratorEntity> getBlockEntityType() {
         return ModBlockEntityTypes.SAPLING_ACCELERATOR;
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntityTypes.SAPLING_ACCELERATOR, SaplingAcceleratorEntity::tick);
+        return checkType(type, getBlockEntityType(), SaplingAcceleratorEntity::tick);
     }
 }

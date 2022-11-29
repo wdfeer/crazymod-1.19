@@ -48,7 +48,11 @@ public class ModBlocks {
     public static final Block SAPLING_ACCELERATOR = RegisterBlock("sapling_accelerator",
             new SaplingAccelerator(),
             ItemGroup.DECORATIONS,
-            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +1x", Formatting.GRAY)});
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +25%", Formatting.GRAY)});
+    public static final Block DENSE_SAPLING_ACCELERATOR = RegisterBlock("dense_sapling_accelerator",
+            new DenseSaplingAccelerator(),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +2x", Formatting.GRAY)});
     public static Block[] getCubeAllModelBlocks(){
         return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
     }
