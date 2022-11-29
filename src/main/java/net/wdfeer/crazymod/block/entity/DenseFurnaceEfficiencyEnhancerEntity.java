@@ -11,7 +11,7 @@ public class DenseFurnaceEfficiencyEnhancerEntity extends FurnaceEfficiencyEnhan
     }
 
     @Override
-    public float getFailChance() {
-        return 0.5f;
+    public float getExtraFuelTime() {
+        return 0.75f;
     }
 }

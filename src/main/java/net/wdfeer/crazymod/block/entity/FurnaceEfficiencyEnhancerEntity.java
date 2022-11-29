@@ -19,18 +19,19 @@ public class FurnaceEfficiencyEnhancerEntity extends FurnaceUpgradeEntity {
     public FurnaceEfficiencyEnhancerEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.FURNACE_EFFICIENCER, pos, state);
     }
-    public float getFailChance() {
-        return 0.8f;
+    public float getExtraFuelTime() {
+        return 0.25f;
     }
     public static void tickAll(World world, AbstractFurnaceBlockEntity furnace, FurnaceUpgradeEntity[] upgrades) {
-        float failChance = 1f;
+        float fuelTimeMult = 1f;
         for (FurnaceUpgradeEntity upgrade : upgrades) {
             if (upgrade instanceof FurnaceEfficiencyEnhancerEntity eff) {
-                failChance *= eff.getFailChance();
+                fuelTimeMult += eff.getExtraFuelTime();
             }
         }
-        if (failChance == 1f)
+        if (fuelTimeMult == 1f)
             return;
+        float failChance = 1f / fuelTimeMult;
 
         int ticks = FurnaceCatalystEntity.getAllExtraTicks(upgrades) + 1;
 
