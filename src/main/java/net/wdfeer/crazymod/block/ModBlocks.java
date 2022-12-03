@@ -53,11 +53,15 @@ public class ModBlocks {
             new DenseSaplingAccelerator(),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +2x", Formatting.GRAY)});
+    public static final Block HOPPER_ACCELERATOR = RegisterBlock("hopper_accelerator",
+            new HopperAccelerator(),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +1x", Formatting.GRAY)});
     public static Block[] getCubeAllModelBlocks(){
         return new Block[] {TUNGSTEN_ORE_BLOCK, TITANIUM_ORE_BLOCK};
     }
     public static Block[] getMineableBlocks(){
-        return new Block[] {TITANIUM_ORE_BLOCK, TUNGSTEN_ORE_BLOCK, FURNACE_CATALYST, FURNACE_EFFICIENCY_ENHANCER, DENSE_FURNACE_CATALYST, DENSE_FURNACE_EFFICIENCY_ENHANCER, IRON_FURNACE_CATALYST, DENSE_IRON_FURNACE_CATALYST, SAPLING_ACCELERATOR, DENSE_SAPLING_ACCELERATOR};
+        return new Block[] {TITANIUM_ORE_BLOCK, TUNGSTEN_ORE_BLOCK, FURNACE_CATALYST, FURNACE_EFFICIENCY_ENHANCER, DENSE_FURNACE_CATALYST, DENSE_FURNACE_EFFICIENCY_ENHANCER, IRON_FURNACE_CATALYST, DENSE_IRON_FURNACE_CATALYST, SAPLING_ACCELERATOR, DENSE_SAPLING_ACCELERATOR, HOPPER_ACCELERATOR};
     }
     static Block RegisterBlock(String name, Block block, ItemGroup tab)
     {

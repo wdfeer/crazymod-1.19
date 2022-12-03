@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZXZ",
+    "XYX",
+    "ZXZ"
+  ],
+  "key": {
+    "Y": {
+      "item": "minecraft:redstone_block"
+    },
+    "X": {
+      "item": "minecraft:hopper"
+    },
+    "Z": {
+      "item": "minecraft:redstone_dust"
+    }
+  },
+  "result": {
+    "item": "crazymod:hopper_accelerator",
+    "count": 1
+  }
+}
+

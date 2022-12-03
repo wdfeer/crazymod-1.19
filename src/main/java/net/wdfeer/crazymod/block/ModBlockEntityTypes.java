@@ -41,6 +41,10 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("dense_sapling_accelerator_entity",
                     DenseSaplingAcceleratorEntity::new,
                     ModBlocks.DENSE_SAPLING_ACCELERATOR);
+    public static final BlockEntityType<HopperAcceleratorEntity> HOPPER_ACCELERATOR =
+            RegisterBlockEntityType("hopper_accelerator_entity",
+                    HopperAcceleratorEntity::new,
+                    ModBlocks.HOPPER_ACCELERATOR);
 
     private static <T extends BlockEntity> BlockEntityType<T> RegisterBlockEntityType(String name, FabricBlockEntityTypeBuilder.Factory<T> factory, net.minecraft.block.Block block){
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,
