@@ -10,7 +10,7 @@
       "item": "minecraft:hopper"
     },
     "Z": {
-      "item": "minecraft:redstone_dust"
+      "item": "minecraft:redstone"
     }
   },
   "result": {
@@ -18,4 +18,3 @@
     "count": 1
   }
 }
-

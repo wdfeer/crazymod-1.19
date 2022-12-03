@@ -3,6 +3,6 @@
     "textures": {
         "front": "crazymod:block/dense_furnace_catalyst_side",
         "side": "crazymod:block/dense_furnace_catalyst_side",
-        "top": "crazymod:block/dense_furnace_catalyst_top"
+        "top": "crazymod:block/furnace_catalyst_top"
     }
 }

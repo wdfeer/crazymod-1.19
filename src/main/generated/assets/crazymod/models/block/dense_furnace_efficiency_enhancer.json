@@ -3,6 +3,6 @@
     "textures": {
         "front": "crazymod:block/dense_furnace_efficiency_enhancer_side",
         "side": "crazymod:block/dense_furnace_efficiency_enhancer_side",
-        "top": "crazymod:block/dense_furnace_efficiency_enhancer_top"
+        "top": "crazymod:block/furnace_efficiency_enhancer_top"
     }
 }

@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "front": "crazymod:block/<0>_side",
+        "side": "crazymod:block/<0>_side",
+        "top": "crazymod:block/<1>"
+    }
+}

@@ -1,11 +1,23 @@
 {
     "values": [
         "furnace_catalyst",
-        "dense_furnace_catalyst",
-        "iron_furnace_catalyst",
-        "dense_iron_furnace_catalyst",
+        {
+            "name": "dense_furnace_catalyst",
+            "top": "furnace_catalyst_top"
+        },
+        {
+            "name": "iron_furnace_catalyst",
+            "top": "furnace_catalyst_top"
+        },
+        {
+            "name": "dense_iron_furnace_catalyst",
+            "top": "furnace_catalyst_top"
+        },
         "furnace_efficiency_enhancer",
-        "dense_furnace_efficiency_enhancer",
+        {
+            "name": "dense_furnace_efficiency_enhancer",
+            "top": "furnace_efficiency_enhancer_top"
+        },
         "sapling_accelerator",
         "dense_sapling_accelerator",
         "hopper_accelerator",
