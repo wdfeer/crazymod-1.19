@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "minecraft:hopper"
+      "item": "minecraft:copper_block"
     },
     "Z": {
-      "item": "minecraft:redstone_dust"
+      "item": "crazymod:hopper_accelerator"
     }
   },
   "result": {
-    "item": "crazymod:hopper_accelerator",
+    "item": "crazymod:dense_hopper_accelerator",
     "count": 1
   }
 }

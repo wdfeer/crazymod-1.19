@@ -11,6 +11,7 @@
     "crazymod:dense_iron_furnace_catalyst",
     "crazymod:sapling_accelerator",
     "crazymod:dense_sapling_accelerator",
-    "crazymod:hopper_accelerator"
+    "crazymod:hopper_accelerator",
+    "crazymod:dense_hopper_accelerator"
   ]
 }

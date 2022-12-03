@@ -7,6 +7,7 @@
         "furnace_efficiency_enhancer",
         "dense_furnace_efficiency_enhancer",
         "sapling_accelerator",
+        "dense_sapling_accelerator",
         "hopper_accelerator",
         "dense_hopper_accelerator"
     ]

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "crazymod:block/dense_sapling_accelerator"
+        }
+    }
+}

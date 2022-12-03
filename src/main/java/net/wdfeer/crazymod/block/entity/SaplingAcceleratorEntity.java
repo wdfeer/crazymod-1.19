@@ -6,7 +6,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.block.ModBlockEntityTypes;
@@ -26,11 +25,9 @@ public class SaplingAcceleratorEntity extends BlockEntity {
         if (world.isClient)
             return;
         for (int x = -1; x <= 1; x++) {
-            BlockPos blockPos = pos.offset(Direction.Axis.X, x);
             for (int y = -1; y <= 1; y++) {
-                blockPos = blockPos.offset(Direction.Axis.Y, x);
                 for (int z = -1; z <= 1; z++) {
-                    blockPos = blockPos.offset(Direction.Axis.Z, z);
+                    BlockPos blockPos = pos.add(x, y, z);
                     var blockState = world.getBlockState(blockPos);
                     if (!(blockState.getBlock() instanceof SaplingBlock))
                         continue;

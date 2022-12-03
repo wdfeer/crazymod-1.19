@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "front": "crazymod:block/furnace_efficiency_enhancer_side",
+        "side": "crazymod:block/furnace_efficiency_enhancer_side",
+        "top": "crazymod:block/furnace_efficiency_enhancer_top"
+    }
+}
