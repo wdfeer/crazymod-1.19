@@ -1,0 +1,13 @@
+{
+    "values": [
+        "furnace_catalyst",
+        "dense_furnace_catalyst",
+        "iron_furnace_catalyst",
+        "dense_iron_furnace_catalyst",
+        "furnace_efficiency_enhancer",
+        "dense_furnace_efficiency_enhancer",
+        "sapling_accelerator",
+        "hopper_accelerator",
+        "dense_hopper_accelerator"
+    ]
+}

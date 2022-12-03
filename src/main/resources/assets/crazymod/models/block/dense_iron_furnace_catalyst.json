@@ -1,7 +1,0 @@
-{
-  "parent": "crazymod:block/furnace_catalyst",
-  "textures": {
-    "front": "crazymod:block/dense_iron_furnace_catalyst_side",
-    "side": "crazymod:block/dense_iron_furnace_catalyst_side"
-  }
-}

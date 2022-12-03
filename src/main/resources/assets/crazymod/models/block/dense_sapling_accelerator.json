@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "crazymod:block/dense_sapling_accelerator_side",
-    "side": "crazymod:block/dense_sapling_accelerator_side",
-    "top": "crazymod:block/dense_sapling_accelerator_top"
-  }
-}

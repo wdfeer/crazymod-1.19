@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "crazymod:block/furnace_catalyst_side",
-    "side": "crazymod:block/furnace_catalyst_side",
-    "top": "crazymod:block/furnace_catalyst_top"
-  }
-}

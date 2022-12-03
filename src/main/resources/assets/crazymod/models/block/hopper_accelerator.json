@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "crazymod:block/hopper_accelerator_side",
-    "side": "crazymod:block/hopper_accelerator_side",
-    "top": "crazymod:block/hopper_accelerator_top"
-  }
-}
