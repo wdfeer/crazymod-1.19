@@ -1,15 +1,5 @@
 const fs = require('fs');
 
-function includesAll(array, required) {
-    for (let i = 0; i < required.length; i++) {
-        let element = required[i];
-        if (!array.includes(element)) {
-            return false;
-        }
-    }
-    return true;
-}
-
 function writeByTemplate(templatePath, dirPath, name) {
     let template = fs.readFileSync(templatePath).toString();
     let oldText = template;
@@ -42,7 +32,8 @@ function datagen(workspacePath) {
 
 function tryDatagen(workspacePath) {
     let files = fs.readdirSync(workspacePath);
-    if (includesAll(files, ['generated', 'resources'])) {
+
+    if (['generated', 'resources'].some(x => files.includes(x))) {
         datagen(workspacePath);
     } else {
         tryDatagen(workspacePath + '/..');
