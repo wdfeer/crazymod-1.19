@@ -1,57 +1,68 @@
 const fs = require('fs');
 
-function replaceAll(text, search, replace) {
-    let oldText = text;
-    text = oldText.replace(search, replace);
-    while (text != oldText) {
-        oldText = text;
-        text = oldText.replace(search, replace);
-    }
-    return text;
+function readJsonObject(path) {
+    return JSON.parse(fs.readFileSync(path));
 }
 
 function writeByTemplate(templatePath, dirPath, arg0, arg1) {
     let text = fs.readFileSync(templatePath).toString();
-    text = replaceAll(text, "<0>", arg0);
-    text = replaceAll(text, "<1>", arg1);
+    text = text.replaceAll("<0>", arg0);
+    text = text.replaceAll("<1>", arg1);
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
     }
     fs.writeFileSync(dirPath + arg0 + '.json', text);
 }
 
-function writeSideTopBlock(generatedPath, name, topOverride) {
-    if (topOverride) {
-        writeByTemplate('./templates/models/sideTopBlockModelTopOverride.json', generatedPath + 'assets/crazymod/models/block/', name, topOverride);
-    } else
-        writeByTemplate('./templates/models/sideTopBlockModel.json', generatedPath + 'assets/crazymod/models/block/', name);
-    writeByTemplate('./templates/models/blockItemModel.json', generatedPath + 'assets/crazymod/models/item/', name);
-    writeByTemplate('./templates/loot_tables/dropSelfBlockLootTable.json', generatedPath + 'data/crazymod/loot_tables/blocks/', name);
-    writeByTemplate('./templates/blockstates/genericBlockState.json', generatedPath + 'assets/crazymod/blockstates/', name);
+const { argv } = require('process');
+
+function writeGenericBlockLootTable(name) {
+    writeByTemplate('./templates/loot_tables/dropSelfBlockLootTable.json', generatedPath + '/data/crazymod/loot_tables/blocks/', name);
 }
 
-function datagen(workspacePath) {
-    let data = fs.readFileSync('./sideTopBlocks.json');
-    let sideTopBlocks = JSON.parse(data).values;
-    let generatedPath = workspacePath + '/generated/';
+function writeGenericBlockState(name) {
+    writeByTemplate('./templates/blockstates/genericBlockState.json', generatedPath + '/assets/crazymod/blockstates/', name);
+}
+
+function writeBlockItem(name) {
+    writeByTemplate('./templates/models/items/blockItemModel.json', generatedPath + '/assets/crazymod/models/item/', name);
+}
+
+function writeSideTopBlock(name, topOverride) {
+    if (topOverride) {
+        writeByTemplate('./templates/models/blocks/sideTopBlockModelTopOverride.json', generatedPath + '/assets/crazymod/models/block/', name, topOverride);
+    } else {
+        writeByTemplate('./templates/models/blocks/sideTopBlockModel.json', generatedPath + '/assets/crazymod/models/block/', name);
+    }
+    writeGenericBlockLootTable(name);
+    writeGenericBlockState(name);
+    writeBlockItem(name);
+}
+
+function sideTopBlocks() {
+    let sideTopBlocks = readJsonObject(valueDir + '/sideTopBlocks.json').values;
     sideTopBlocks.forEach(object => {
         let name = object.name;
         if (name == undefined) {
             name = object;
         }
-        console.log("Generating Data for " + name);
-        writeSideTopBlock(generatedPath, name, object.top);
+
+        try {
+            writeSideTopBlock(generatedPath, name, object.top);
+        } catch (error) {
+            console.error("Failed to generate data for " + name);
+        }
     });
 }
 
-function tryDatagen(workspacePath) {
-    let files = fs.readdirSync(workspacePath);
-
-    if (['generated', 'resources'].some(x => files.includes(x))) {
-        datagen(workspacePath);
-    } else {
-        tryDatagen(workspacePath + '/..');
-    }
+function datagen() {
+    sideTopBlocks();
 }
 
-tryDatagen('..');
+const generatedPath = argv[2];
+const valueDir = argv[3];
+if (generatedPath && valueDir) {
+    datagen()
+}
+else
+    throw "Generated path and Value Directory path arguments not provided!";
