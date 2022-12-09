@@ -35,14 +35,14 @@ public class ModOres {
             (Feature.ORE, new OreFeatureConfig(
                     OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                     ModBlocks.TUNGSTEN_ORE_BLOCK.getDefaultState(),
-                    3));
+                    5));
 
     public static PlacedFeature TUNGSTEN_ORE_PLACED_FEATURE = new PlacedFeature(
             RegistryEntry.of(TUNGSTEN_ORE_CONFIGURED_FEATURE),
             Arrays.asList(
                     CountPlacementModifier.of(100),
                     SquarePlacementModifier.of(),
-                    HeightRangePlacementModifier.uniform(YOffset.aboveBottom(120), YOffset.getTop())));
+                    HeightRangePlacementModifier.uniform(YOffset.aboveBottom(100), YOffset.getTop())));
     private static void RegisterConfiguredFeature(String name, ConfiguredFeature<?, ?> feature){
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(CrazyMod.MOD_ID, name), feature);
     }
