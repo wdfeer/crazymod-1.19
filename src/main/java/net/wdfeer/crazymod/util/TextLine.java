@@ -1,4 +1,4 @@
-package net.wdfeer.crazymod;
+package net.wdfeer.crazymod.util;
 
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;

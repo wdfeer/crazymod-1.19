@@ -10,7 +10,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wdfeer.crazymod.CrazyMod;
-import net.wdfeer.crazymod.TextLine;
+import net.wdfeer.crazymod.util.TextLine;
 import net.wdfeer.crazymod.block.custom.*;
 import org.jetbrains.annotations.Nullable;
 

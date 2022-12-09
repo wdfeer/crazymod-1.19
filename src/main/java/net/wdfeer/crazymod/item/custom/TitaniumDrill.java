@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static net.wdfeer.crazymod.TextLine.addTooltipLine;
+import static net.wdfeer.crazymod.util.TextLine.addTooltipLine;
 
 public class TitaniumDrill extends MiningToolItem {
     public TitaniumDrill() {

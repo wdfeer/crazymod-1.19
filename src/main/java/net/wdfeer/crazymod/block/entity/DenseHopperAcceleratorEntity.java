@@ -10,7 +10,7 @@ public class DenseHopperAcceleratorEntity extends HopperAcceleratorEntity {
     }
 
     @Override
-    public int getExtraTicks() {
-        return 8;
+    public float getExtraTicks() {
+        return super.getExtraTicks() * 8;
     }
 }

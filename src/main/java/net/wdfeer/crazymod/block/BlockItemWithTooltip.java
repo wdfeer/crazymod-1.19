@@ -6,7 +6,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
-import net.wdfeer.crazymod.TextLine;
+import net.wdfeer.crazymod.util.TextLine;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
