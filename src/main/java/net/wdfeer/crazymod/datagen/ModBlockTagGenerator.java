@@ -22,7 +22,7 @@ public class ModBlockTagGenerator extends FabricTagProvider.BlockTagProvider {
     }
     @Override
     protected void generateTags() {
-        addAll(ModBlocks.getMineableBlocks(), getOrCreateTagBuilder(PICKAXE_MINEABLE));
+        addAll(ModBlocks.mineableBlocks, getOrCreateTagBuilder(PICKAXE_MINEABLE));
         getOrCreateTagBuilder(NEEDS_DIAMOND_TOOL).add(ModBlocks.TITANIUM_ORE_BLOCK);
         getOrCreateTagBuilder(NEEDS_IRON_TOOL).add(ModBlocks.TUNGSTEN_ORE_BLOCK);
     }

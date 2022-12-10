@@ -21,6 +21,7 @@
         "sapling_accelerator",
         "dense_sapling_accelerator",
         "hopper_accelerator",
-        "dense_hopper_accelerator"
+        "dense_hopper_accelerator",
+        "spawner_accelerator"
     ]
 }

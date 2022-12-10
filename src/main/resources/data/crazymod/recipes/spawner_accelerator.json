@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:redstone_block"
+    },
+    "Y": {
+      "item": "minecraft:iron_bars"
+    },
+    "Z": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "crazymod:dense_furnace_catalyst",
+    "count": 1
+  }
+}
+

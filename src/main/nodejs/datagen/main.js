@@ -48,9 +48,10 @@ function sideTopBlocks() {
         }
 
         try {
-            writeSideTopBlock(generatedPath, name, object.top);
+            writeSideTopBlock(name, object.top);
         } catch (error) {
             console.error("Failed to generate data for " + name);
+            console.error(error.message);
         }
     });
 }

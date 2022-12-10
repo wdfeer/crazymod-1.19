@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "front": "crazymod:block/spawner_accelerator_side",
+        "side": "crazymod:block/spawner_accelerator_side",
+        "top": "crazymod:block/spawner_accelerator_top"
+    }
+}

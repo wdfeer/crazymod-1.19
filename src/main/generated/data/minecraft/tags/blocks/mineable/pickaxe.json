@@ -12,6 +12,7 @@
     "crazymod:sapling_accelerator",
     "crazymod:dense_sapling_accelerator",
     "crazymod:hopper_accelerator",
-    "crazymod:dense_hopper_accelerator"
+    "crazymod:dense_hopper_accelerator",
+    "crazymod:spawner_accelerator"
   ]
 }
