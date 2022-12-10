@@ -20,28 +20,30 @@ public abstract class BlockEntityTickerEntity extends BlockEntity {
         return !(blockEntity instanceof BlockEntityTickerEntity);
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, BlockEntityTickerEntity instance){
+    public static void tick(World world, BlockPos thisPos, BlockState thisState, BlockEntityTickerEntity instance){
         if (world.isClient)
             return;
         int radius = instance.getRadius();
         for (int x = -radius; x <= radius; x++) {
             for (int y = -radius; y <= radius; y++) {
                 for (int z = -radius; z <= radius; z++) {
-                    BlockPos blockPos = pos.add(x, y, z);
+                    BlockPos blockPos = thisPos.add(x, y, z);
                     var blockState = world.getBlockState(blockPos);
                     BlockEntity blockEntity = world.getBlockEntity(blockPos);
                     if (blockEntity == null) continue;
                     if (!instance.filter(blockState, blockEntity)) continue;
-                    BlockEntityType blockEntityType = blockEntity.getType();
-                    BlockEntityTicker ticker = blockState.getBlockEntityTicker(world, blockEntityType);
-                    if (ticker == null) continue;
-
                     int ticks = RandomRound(instance.getExtraTicks());
                     for (int i = 0; i < ticks; i++) {
-                        ticker.tick(world, blockPos, blockState, blockEntity);
+                        tickBlockEntity(world, blockPos, blockState, blockEntity);
                     }
                 }
             }
         }
+    }
+    public static void tickBlockEntity(World world, BlockPos pos, BlockState state, BlockEntity entity){
+        BlockEntityType blockEntityType = entity.getType();
+        BlockEntityTicker ticker = state.getBlockEntityTicker(world, blockEntityType);
+        if (ticker == null) return;
+        ticker.tick(world, pos, state, entity);
     }
 }

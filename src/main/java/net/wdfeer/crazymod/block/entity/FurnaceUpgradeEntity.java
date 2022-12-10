@@ -17,14 +17,15 @@ public abstract class FurnaceUpgradeEntity extends BlockEntity {
     public static void tick(World world, BlockPos pos, BlockState state, FurnaceUpgradeEntity instance){
         BlockPos abovePos = pos.up();
         BlockState aboveState = world.getBlockState(abovePos);
-        if (aboveState.isAir())
-            return;
         BlockEntity aboveBlockEntity = world.getBlockEntity(abovePos);
-        if (aboveBlockEntity instanceof AbstractFurnaceBlockEntity furnaceEntity){
+        if (aboveBlockEntity instanceof FurnaceUpgradeEntity)
+            return;
+        if (aboveState.getBlock().getName().toString().toLowerCase().contains("furnace")){
             FurnaceUpgradeEntity[] upgrades = getUpgrades(world, pos, instance);
 
-            FurnaceCatalystEntity.tickAll(world, abovePos, aboveState, furnaceEntity, upgrades);
-            FurnaceEfficiencyEnhancerEntity.tickAll(world, furnaceEntity, upgrades);
+            FurnaceCatalystEntity.tickAll(world, abovePos, aboveState, aboveBlockEntity, upgrades);
+            if (aboveBlockEntity instanceof AbstractFurnaceBlockEntity furnaceEntity)
+                FurnaceEfficiencyEnhancerEntity.tickAll(world, furnaceEntity, upgrades);
         }
     }
     private static FurnaceUpgradeEntity[] getUpgrades(World world, BlockPos topPos, FurnaceUpgradeEntity topUpgrade){

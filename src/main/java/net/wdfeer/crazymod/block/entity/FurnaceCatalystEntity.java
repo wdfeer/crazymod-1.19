@@ -1,7 +1,7 @@
 package net.wdfeer.crazymod.block.entity;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,10 +26,10 @@ public class FurnaceCatalystEntity extends FurnaceUpgradeEntity {
         }
         return extraTicks;
     }
-    public static void tickAll(World world, BlockPos furnacePos, BlockState furnaceState, AbstractFurnaceBlockEntity furnace, FurnaceUpgradeEntity[] upgrades) {
+    public static void tickAll(World world, BlockPos furnacePos, BlockState furnaceState, BlockEntity furnaceEntity, FurnaceUpgradeEntity[] upgrades) {
         int extraTicks = getAllExtraTicks(upgrades);
         for (int i = 0; i < extraTicks; i++) {
-            AbstractFurnaceBlockEntity.tick(world, furnacePos, furnaceState, furnace);
+            BlockEntityTickerEntity.tickBlockEntity(world, furnacePos, furnaceState, furnaceEntity);
         }
     }
 }
