@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XZX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:redstone_block"
+    },
+    "Z": {
+      "item": "crazymod:dense_hopper_accelerator"
+    }
+  },
+  "result": {
+    "item": "crazymod:extra_dense_hopper_accelerator",
+    "count": 1
+  }
+}
+

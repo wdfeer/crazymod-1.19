@@ -77,6 +77,11 @@ public class ModBlocks {
             new BlockData(BlockModelType.CubeTopSameBottom),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +8x", Formatting.GRAY)});
+    public static final Block EXTRA_DENSE_HOPPER_ACCELERATOR = RegisterBlock("extra_dense_hopper_accelerator",
+            new ExtraDenseHopperAccelerator(),
+            new BlockData(BlockModelType.CubeTopSameBottom),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +64x", Formatting.GRAY)});
     public static final Block SPAWNER_ACCELERATOR = RegisterBlock("spawner_accelerator",
             new SpawnerAccelerator(),
             new BlockData(BlockModelType.CubeTopSameBottom),
