@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "": {
-            "model": "crazymod:block/iron_furnace_catalyst"
-        }
+  "variants": {
+    "": {
+      "model": "crazymod:block/iron_furnace_catalyst"
     }
+  }
 }

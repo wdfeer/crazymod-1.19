@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "": {
-            "model": "crazymod:block/spawner_accelerator"
-        }
+  "variants": {
+    "": {
+      "model": "crazymod:block/spawner_accelerator"
     }
+  }
 }

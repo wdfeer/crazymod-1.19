@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "": {
-            "model": "crazymod:block/dense_furnace_catalyst"
-        }
+  "variants": {
+    "": {
+      "model": "crazymod:block/dense_furnace_catalyst"
     }
+  }
 }

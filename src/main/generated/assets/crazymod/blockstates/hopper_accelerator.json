@@ -1,7 +1,7 @@
 {
-    "variants": {
-        "": {
-            "model": "crazymod:block/hopper_accelerator"
-        }
+  "variants": {
+    "": {
+      "model": "crazymod:block/hopper_accelerator"
     }
+  }
 }

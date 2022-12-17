@@ -1,25 +1,20 @@
 {
-    "type": "minecraft:block",
-    "pools": [
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
         {
-            "bonus_rolls": 0.0,
-            "entries": [
-                {
-                    "type": "minecraft:alternatives",
-                    "children": [
-                        {
-                            "type": "minecraft:item",
-                            "conditions": [
-                                {
-                                    "condition": "minecraft:match_tool"
-                                }
-                            ],
-                            "name": "crazymod:dense_iron_furnace_catalyst"
-                        }
-                    ]
-                }
-            ],
-            "rolls": 1.0
+          "condition": "minecraft:survives_explosion"
         }
-    ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crazymod:dense_iron_furnace_catalyst"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
 }
