@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:iron_bars"
     },
     "Y": {
-      "item": "minecraft:iron_bars"
+      "item": "minecraft:redstone_block"
     },
     "Z": {
       "item": "minecraft:blaze_rod"

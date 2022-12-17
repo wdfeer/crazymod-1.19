@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YYY",
+    "YXY",
+    "YYY"
+  ],
+  "key": {
+    "Y": {
+      "item": "crazymod:spawner_accelerator"
+    },
+    "X": {
+      "item": "minecraft:copper_block"
+    }
+  },
+  "result": {
+    "item": "crazymod:dense_spawner_accelerator",
+    "count": 1
+  }
+}
+

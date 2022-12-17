@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "crazymod:block/dense_spawner_accelerator_top",
+    "side": "crazymod:block/dense_spawner_accelerator_side",
+    "top": "crazymod:block/dense_spawner_accelerator_top"
+  }
+}

@@ -2,10 +2,14 @@ package net.wdfeer.crazymod.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 
 public class SpawnerAcceleratorEntity extends BlockEntityTickerEntity {
+    public SpawnerAcceleratorEntity(BlockEntityType type, BlockPos pos, BlockState state){
+        super(type, pos, state);
+    }
     public SpawnerAcceleratorEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.SPAWNER_ACCELERATOR, pos, state);
     }

@@ -87,6 +87,11 @@ public class ModBlocks {
             new BlockData(BlockModelType.CubeTopSameBottom),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +25%", Formatting.GRAY)});
+    public static final Block DENSE_SPAWNER_ACCELERATOR = RegisterBlock("dense_spawner_accelerator",
+            new DenseSpawnerAccelerator(),
+            new BlockData(BlockModelType.CubeTopSameBottom),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +2x", Formatting.GRAY)});
     static Block RegisterBlock(String name, Block block, BlockData data, ItemGroup tab)
     {
         return RegisterBlock(name, block, data, tab, null);
