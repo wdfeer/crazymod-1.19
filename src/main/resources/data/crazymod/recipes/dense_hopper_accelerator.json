@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "ZZZ",
-    "ZXZ",
-    "ZZZ"
+    "XXX",
+    "XZX",
+    "XXX"
   ],
   "key": {
     "X": {
-      "item": "minecraft:copper_block"
+      "item": "minecraft:redstone_block"
     },
     "Z": {
       "item": "crazymod:hopper_accelerator"
