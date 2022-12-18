@@ -17,6 +17,7 @@ import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.block.entity.AdvancedComputerAcceleratorEntity;
 import net.wdfeer.crazymod.block.entity.ComputerAcceleratorEntity;
+import net.wdfeer.crazymod.block.entity.UltimateComputerAcceleratorEntity;
 import net.wdfeer.crazymod.util.TextLine;
 import org.jetbrains.annotations.Nullable;
 
@@ -60,5 +61,14 @@ public class ComputerAccelerator extends ModBlockWithEntity {
         AdvancedComputerAccelerator.blockEntityType = ModBlockEntityTypes.RegisterBlockEntityType("advanced_computer_accelerator_entity",
                 AdvancedComputerAcceleratorEntity::new,
                 AdvancedComputerAccelerator.instance);
+
+        UltimateComputerAccelerator.instance = ModBlocks.RegisterBlock("ultimate_computer_accelerator",
+                new UltimateComputerAccelerator(),
+                new BlockData(BlockModelType.CubeTopSameBottom),
+                ItemGroup.DECORATIONS,
+                new TextLine[]{new TextLine("Range: 7x7x7", Formatting.GRAY), new TextLine("Speed: +4x", Formatting.GRAY)});
+        UltimateComputerAccelerator.blockEntityType = ModBlockEntityTypes.RegisterBlockEntityType("ultimate_computer_accelerator_entity",
+                UltimateComputerAcceleratorEntity::new,
+                UltimateComputerAccelerator.instance);
     }
 }
