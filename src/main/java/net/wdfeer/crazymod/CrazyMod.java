@@ -1,7 +1,6 @@
 package net.wdfeer.crazymod;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.entity.ModEntityTypes;
@@ -19,6 +18,9 @@ public class CrazyMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		Initialize();
+	}
+	public static void Initialize(){
 		ModItems.Initialize();
 		ModBlocks.Initialize();
 		ModBlockEntityTypes.Initialize();
