@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "crazymod:block/advanced_computer_accelerator_top",
+    "side": "crazymod:block/advanced_computer_accelerator_side",
+    "top": "crazymod:block/advanced_computer_accelerator_top"
+  }
+}

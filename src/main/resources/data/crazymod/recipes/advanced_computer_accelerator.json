@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YZY",
+    "AXA",
+    "YZY"
+  ],
+  "key": {
+    "A": {
+      "item": "crazymod:computer_accelerator"
+    },
+    "X": {
+      "item": "minecraft:copper_block"
+    },
+    "Y": {
+      "item": "minecraft:gold_block"
+    },
+    "Z": {
+      "item": "minecraft:lapis_block"
+    }
+  },
+  "result": {
+    "item": "crazymod:advanced_computer_accelerator",
+    "count": 1
+  }
+}
+
