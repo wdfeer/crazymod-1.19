@@ -53,6 +53,11 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("extra_dense_hopper_accelerator_entity",
                     ExtraDenseHopperAcceleratorEntity::new,
                     ModBlocks.EXTRA_DENSE_HOPPER_ACCELERATOR);
+    public static final BlockEntityType<HopperAcceleratorEntity> ULTRA_DENSE_HOPPER_ACCELERATOR =
+            RegisterBlockEntityType("ultra_dense_hopper_accelerator_entity",
+            UltraDenseHopperAcceleratorEntity::new,
+            ModBlocks.ULTRA_DENSE_HOPPER_ACCELERATOR
+    );
     public static final BlockEntityType<SpawnerAcceleratorEntity> SPAWNER_ACCELERATOR =
             RegisterBlockEntityType("spawner_accelerator_entity",
                     SpawnerAcceleratorEntity::new,

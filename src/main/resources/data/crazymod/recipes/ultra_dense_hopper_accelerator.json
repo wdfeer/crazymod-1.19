@@ -10,14 +10,14 @@
       "item": "minecraft:redstone_block"
     },
     "Y": {
-      "item": "minecraft:copper_ingot"
+      "item": "minecraft:copper_block"
     },
     "Z": {
-      "item": "crazymod:dense_hopper_accelerator"
+      "item": "crazymod:extra_dense_hopper_accelerator"
     }
   },
   "result": {
-    "item": "crazymod:extra_dense_hopper_accelerator",
+    "item": "crazymod:ultra_dense_hopper_accelerator",
     "count": 1
   }
 }
