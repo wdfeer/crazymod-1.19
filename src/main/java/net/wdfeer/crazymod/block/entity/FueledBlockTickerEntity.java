@@ -51,8 +51,6 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
 
             int fuelTime = FuelRegistry.INSTANCE.get(stack.getItem());
             if (fuelTime > 0){
-                fuelTime *= getFuelConsumption();
-
                 stack.decrement(1);
                 this.burnTime += fuelTime;
                 this.fuelTime = fuelTime;
@@ -68,7 +66,7 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
         if (instance.canTick()) {
             BlockTickerEntity.tick(world, pos, state, instance);
 
-            instance.burnTime--;
+            instance.burnTime -= instance.getFuelConsumption();
 
             state = state.with(FueledBlockTicker.LIT, true);
         } else{
