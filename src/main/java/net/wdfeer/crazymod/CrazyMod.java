@@ -5,6 +5,7 @@ import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 import net.wdfeer.crazymod.block.ModBlocks;
 import net.wdfeer.crazymod.entity.ModEntityTypes;
 import net.wdfeer.crazymod.item.ModItems;
+import net.wdfeer.crazymod.ui.Screens;
 import net.wdfeer.crazymod.util.ModModelPredicateProvider;
 import net.wdfeer.crazymod.util.ModSounds;
 import net.wdfeer.crazymod.worldgen.ModOres;
@@ -28,5 +29,6 @@ public class CrazyMod implements ModInitializer {
 		ModModelPredicateProvider.registerModModels();
 		ModEntityTypes.Initialize();
 		ModSounds.Initialize();
+		Screens.Initialize();
 	}
 }

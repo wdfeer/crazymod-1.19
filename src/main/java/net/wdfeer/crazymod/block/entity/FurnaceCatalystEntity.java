@@ -29,7 +29,7 @@ public class FurnaceCatalystEntity extends FurnaceUpgradeEntity {
     public static void tickAll(World world, BlockPos furnacePos, BlockState furnaceState, BlockEntity furnaceEntity, FurnaceUpgradeEntity[] upgrades) {
         int extraTicks = getAllExtraTicks(upgrades);
         for (int i = 0; i < extraTicks; i++) {
-            BlockEntityTickerEntity.tickBlockEntity(world, furnacePos, furnaceState, furnaceEntity);
+            BlockTickerEntity.tickBlockEntity(world, furnacePos, furnaceState, furnaceEntity);
         }
     }
 }

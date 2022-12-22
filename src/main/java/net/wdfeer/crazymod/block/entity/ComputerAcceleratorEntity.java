@@ -8,7 +8,7 @@ import net.wdfeer.crazymod.block.custom.ComputerAccelerator;
 
 import java.util.Arrays;
 
-public class ComputerAcceleratorEntity extends BlockEntityTickerEntity {
+public class ComputerAcceleratorEntity extends BlockTickerEntity {
     public ComputerAcceleratorEntity(BlockEntityType type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }

@@ -12,8 +12,9 @@ import net.wdfeer.crazymod.block.entity.SpawnerAcceleratorEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class SpawnerAccelerator extends ModBlockWithEntity {
+    public static final FabricBlockSettings defaultSettings = FabricBlockSettings.of(Material.STONE).strength(6f, 30f).requiresTool();
     public SpawnerAccelerator() {
-        super(FabricBlockSettings.of(Material.STONE).strength(6f, 30f).requiresTool());
+        super(defaultSettings);
     }
     @Override
     public BlockEntityType<? extends SpawnerAcceleratorEntity> getBlockEntityType() {

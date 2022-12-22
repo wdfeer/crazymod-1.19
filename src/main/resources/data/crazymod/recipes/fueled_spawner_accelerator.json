@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YYY",
+    "YXY",
+    "YYY"
+  ],
+  "key": {
+    "X": {
+      "item": "crazymod:spawner_accelerator"
+    },
+    "Y": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "crazymod:fueled_spawner_accelerator",
+    "count": 1
+  }
+}
+

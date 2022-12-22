@@ -6,7 +6,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.wdfeer.crazymod.block.ModBlockEntityTypes;
 
-public class HopperAcceleratorEntity extends BlockEntityTickerEntity {
+public class HopperAcceleratorEntity extends BlockTickerEntity {
     public HopperAcceleratorEntity(BlockEntityType type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }

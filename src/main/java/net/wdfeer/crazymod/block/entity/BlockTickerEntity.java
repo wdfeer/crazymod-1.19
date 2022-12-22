@@ -9,18 +9,18 @@ import net.minecraft.world.World;
 
 import static net.wdfeer.crazymod.util.ExtraMath.RandomRound;
 
-public abstract class BlockEntityTickerEntity extends BlockEntity {
-    public BlockEntityTickerEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+public abstract class BlockTickerEntity extends BlockEntity {
+    public BlockTickerEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
 
     public abstract float getExtraTicks();
     public abstract int getRadius();
     public boolean filter(BlockState state, BlockEntity blockEntity){
-        return !(blockEntity instanceof BlockEntityTickerEntity);
+        return !(blockEntity instanceof BlockTickerEntity);
     }
 
-    public static void tick(World world, BlockPos thisPos, BlockState thisState, BlockEntityTickerEntity instance){
+    public static void tick(World world, BlockPos thisPos, BlockState thisState, BlockTickerEntity instance){
         if (world.isClient)
             return;
         int radius = instance.getRadius();
