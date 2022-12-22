@@ -10,7 +10,6 @@ import net.minecraft.util.Identifier;
 import net.wdfeer.crazymod.CrazyMod;
 
 public class FueledBlockTickerScreen extends HandledScreen<FueledBlockTickerScreenHandler> {
-    //A path to the gui texture. In this example we use the texture from the dispenser
     private static final Identifier TEXTURE = new Identifier(CrazyMod.MOD_ID, "textures/gui/container/fueled_block_ticker.png");
         
     public FueledBlockTickerScreen(FueledBlockTickerScreenHandler handler, PlayerInventory inventory, Text title) {
@@ -25,6 +24,12 @@ public class FueledBlockTickerScreen extends HandledScreen<FueledBlockTickerScre
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+
+        if (handler.getFuelProgressPercent() > 0) {
+            int percent = handler.getFuelProgressPercent();
+            int burn = 12 * percent / 100;
+            this.drawTexture(matrices, this.x + 81, this.y + 55 + 12 - burn, 176, 12 - burn, 14, burn + 1);
+        }
     }
         
     @Override

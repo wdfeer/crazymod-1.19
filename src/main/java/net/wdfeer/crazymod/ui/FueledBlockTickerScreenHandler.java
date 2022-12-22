@@ -5,6 +5,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
@@ -15,14 +17,19 @@ public class FueledBlockTickerScreenHandler extends ScreenHandler {
     //The client will call the other constructor with an empty Inventory and the screenHandler will automatically
     //sync this empty inventory with the inventory on the server.
     public FueledBlockTickerScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(1));
+        this(syncId, playerInventory, new SimpleInventory(1), new ArrayPropertyDelegate(1));
     }
 
+    final PropertyDelegate fuelProgressDelegate;
+    public int getFuelProgressPercent() { return fuelProgressDelegate.get(0); }
     //This constructor gets called from the BlockEntity on the server without calling the other constructor first, the server knows the inventory of the container
     //and can therefore directly provide it as an argument. This inventory will then be synced to the client.
-    public FueledBlockTickerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public FueledBlockTickerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(Screens.FUELED_BLOCK_TICKER_SCREEN_HANDLER, syncId);
         checkSize(inventory, 1);
+        checkDataCount(propertyDelegate, 1);
+
+        this.fuelProgressDelegate = propertyDelegate;
         this.inventory = inventory;
         //some inventories do custom logic when a player opens it.
         inventory.onOpen(playerInventory.player);
@@ -43,6 +50,7 @@ public class FueledBlockTickerScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
 
+        this.addProperties(fuelProgressDelegate);
     }
 
     @Override
