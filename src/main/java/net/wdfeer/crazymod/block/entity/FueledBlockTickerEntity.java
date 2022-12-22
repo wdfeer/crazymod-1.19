@@ -1,6 +1,7 @@
 package net.wdfeer.crazymod.block.entity;
 
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,6 +16,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.wdfeer.crazymod.block.ImplementedInventory;
+import net.wdfeer.crazymod.block.custom.FueledBlockTicker;
 import net.wdfeer.crazymod.ui.FueledBlockTickerScreenHandler;
 
 public abstract class FueledBlockTickerEntity extends BlockTickerEntity implements NamedScreenHandlerFactory, ImplementedInventory {
@@ -32,14 +34,19 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
             if (fuelTime > 0){
                 stack.decrement(1);
                 this.fuelTime += fuelTime;
+                this.markDirty();
                 return true;
             } else return false;
         } else return true;
     }
-    public static void tick(World world, BlockPos thisPos, BlockState thisState, FueledBlockTickerEntity instance){
+    public static void tick(World world, BlockPos pos, BlockState state, FueledBlockTickerEntity instance){
         if (instance.canTick()) {
+            BlockTickerEntity.tick(world, pos, state, instance);
+
+            state = state.with(FueledBlockTicker.LIT, instance.fuelTime > 0);
+            world.setBlockState(pos, state, Block.NOTIFY_ALL);
+
             instance.fuelTime--;
-            BlockTickerEntity.tick(world, thisPos, thisState, instance);
         }
     }
 

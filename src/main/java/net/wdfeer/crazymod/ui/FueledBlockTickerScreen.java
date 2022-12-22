@@ -7,10 +7,11 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.wdfeer.crazymod.CrazyMod;
 
 public class FueledBlockTickerScreen extends HandledScreen<FueledBlockTickerScreenHandler> {
     //A path to the gui texture. In this example we use the texture from the dispenser
-    private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
+    private static final Identifier TEXTURE = new Identifier(CrazyMod.MOD_ID, "textures/gui/container/fueled_block_ticker.png");
         
     public FueledBlockTickerScreen(FueledBlockTickerScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);

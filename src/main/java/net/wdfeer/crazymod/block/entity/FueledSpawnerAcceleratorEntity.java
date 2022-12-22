@@ -11,7 +11,7 @@ public class FueledSpawnerAcceleratorEntity extends FueledBlockTickerEntity {
 
     @Override
     public float getExtraTicks() {
-        return 10;
+        return 1;
     }
 
     @Override

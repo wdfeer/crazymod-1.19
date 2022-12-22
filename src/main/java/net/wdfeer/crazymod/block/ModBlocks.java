@@ -99,7 +99,7 @@ public class ModBlocks {
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +2x", Formatting.GRAY)});
     public static final Block FUELED_SPAWNER_ACCELERATOR = RegisterBlock("fueled_spawner_accelerator",
             new FueledSpawnerAccelerator(),
-            new BlockData(BlockModelType.CubeTopSameBottom),
+            new BlockData(BlockModelType.Custom),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +1x", Formatting.GRAY)});
     public static Block RegisterBlock(String name, Block block, BlockData data, ItemGroup tab)
