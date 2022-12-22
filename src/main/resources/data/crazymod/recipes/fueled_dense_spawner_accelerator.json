@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "crazymod:fueled_spawner_accelerator"
+    },
+    "Y": {
+      "item": "minecraft:copper_block"
+    }
+  },
+  "result": {
+    "item": "crazymod:fueled_dense_spawner_accelerator",
+    "count": 1
+  }
+}
+

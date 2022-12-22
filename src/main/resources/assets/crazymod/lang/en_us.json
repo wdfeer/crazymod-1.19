@@ -16,6 +16,7 @@
   "block.crazymod.spawner_accelerator": "Spawner Accelerator",
   "block.crazymod.dense_spawner_accelerator": "Dense Spawner Accelerator",
   "block.crazymod.fueled_spawner_accelerator": "Fueled Spawner Accelerator",
+  "block.crazymod.fueled_dense_spawner_accelerator": "Fueled Dense Spawner Accelerator",
   "block.crazymod.computer_accelerator": "Turtle Accelerator",
   "block.crazymod.advanced_computer_accelerator": "Advanced Turtle Accelerator",
   "block.crazymod.ultimate_computer_accelerator": "Ultimate Turtle Accelerator",

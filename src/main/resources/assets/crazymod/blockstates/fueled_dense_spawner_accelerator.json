@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "crazymod:block/fueled_dense_spawner_accelerator"
+    },
+    "lit=true": {
+      "model": "crazymod:block/fueled_dense_spawner_accelerator_on"
+    }
+  }
+}

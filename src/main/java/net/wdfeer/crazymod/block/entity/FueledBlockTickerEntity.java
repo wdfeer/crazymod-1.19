@@ -26,6 +26,8 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
         super(type, pos, state);
     }
 
+    public float getFuelConsumption() { return 1f; }
+
     int fuelTime = 1;
     int burnTime = 0;
     PropertyDelegate burnTimePercentDelegate = new PropertyDelegate() {
@@ -49,6 +51,8 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
 
             int fuelTime = FuelRegistry.INSTANCE.get(stack.getItem());
             if (fuelTime > 0){
+                fuelTime *= getFuelConsumption();
+
                 stack.decrement(1);
                 this.burnTime += fuelTime;
                 this.fuelTime = fuelTime;
@@ -58,14 +62,19 @@ public abstract class FueledBlockTickerEntity extends BlockTickerEntity implemen
         } else return true;
     }
     public static void tick(World world, BlockPos pos, BlockState state, FueledBlockTickerEntity instance){
+        if (world.isClient)
+            return;
+
         if (instance.canTick()) {
             BlockTickerEntity.tick(world, pos, state, instance);
 
-            state = state.with(FueledBlockTicker.LIT, instance.burnTime > 0);
-            world.setBlockState(pos, state, Block.NOTIFY_ALL);
-
             instance.burnTime--;
+
+            state = state.with(FueledBlockTicker.LIT, true);
+        } else{
+            state = state.with(FueledBlockTicker.LIT, false);
         }
+        world.setBlockState(pos, state, Block.NOTIFY_ALL);
     }
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);

@@ -102,6 +102,11 @@ public class ModBlocks {
             new BlockData(BlockModelType.Custom),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +1x", Formatting.GRAY)});
+    public static final Block FUELED_DENSE_SPAWNER_ACCELERATOR = RegisterBlock("fueled_dense_spawner_accelerator",
+            new FueledDenseSpawnerAccelerator(),
+            new BlockData(BlockModelType.Custom),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +8x", Formatting.GRAY)});
     public static Block RegisterBlock(String name, Block block, BlockData data, ItemGroup tab)
     {
         return RegisterBlock(name, block, data, tab, null);
