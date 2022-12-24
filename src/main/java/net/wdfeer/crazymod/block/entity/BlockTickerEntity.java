@@ -28,16 +28,19 @@ public abstract class BlockTickerEntity extends BlockEntity {
             for (int y = -radius; y <= radius; y++) {
                 for (int z = -radius; z <= radius; z++) {
                     BlockPos blockPos = thisPos.add(x, y, z);
-                    var blockState = world.getBlockState(blockPos);
-                    BlockEntity blockEntity = world.getBlockEntity(blockPos);
-                    if (blockEntity == null) continue;
-                    if (!instance.filter(blockState, blockEntity)) continue;
-                    int ticks = RandomRound(instance.getExtraTicks());
-                    for (int i = 0; i < ticks; i++) {
-                        tickBlockEntity(world, blockPos, blockState, blockEntity);
-                    }
+                    instance.tryTickBlock(world, blockPos);
                 }
             }
+        }
+    }
+    public void tryTickBlock(World world, BlockPos pos){
+        var blockState = world.getBlockState(pos);
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if (blockEntity == null) return;
+        if (!filter(blockState, blockEntity)) return;
+        int ticks = RandomRound(getExtraTicks());
+        for (int i = 0; i < ticks; i++) {
+            tickBlockEntity(world, pos, blockState, blockEntity);
         }
     }
     public static void tickBlockEntity(World world, BlockPos pos, BlockState state, BlockEntity entity){

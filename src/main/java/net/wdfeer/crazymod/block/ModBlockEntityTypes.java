@@ -74,6 +74,10 @@ public class ModBlockEntityTypes {
             RegisterBlockEntityType("fueled_dense_spawner_accelerator_entity",
                     FueledDenseSpawnerAcceleratorEntity::new,
                     ModBlocks.FUELED_DENSE_SPAWNER_ACCELERATOR);
+    public static final BlockEntityType<FluidAcceleratorEntity> FLUID_ACCELERATOR =
+            RegisterBlockEntityType("fluid_accelerator_entity",
+                    FluidAcceleratorEntity::new,
+                    ModBlocks.FLUID_ACCELERATOR);
 
     public static <T extends BlockEntity> BlockEntityType<T> RegisterBlockEntityType(String name, FabricBlockEntityTypeBuilder.Factory<T> factory, net.minecraft.block.Block block){
         return Registry.register(Registry.BLOCK_ENTITY_TYPE,

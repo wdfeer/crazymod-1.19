@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:water_bucket"
+    },
+    "Y": {
+      "item": "minecraft:lava_bucket"
+    },
+    "Z": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "crazymod:fluid_accelerator",
+    "count": 1
+  }
+}
+

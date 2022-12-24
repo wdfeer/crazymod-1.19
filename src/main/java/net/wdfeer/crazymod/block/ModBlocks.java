@@ -107,6 +107,11 @@ public class ModBlocks {
             new BlockData(BlockModelType.Custom),
             ItemGroup.DECORATIONS,
             new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +8x", Formatting.GRAY)});
+    public static final Block FLUID_ACCELERATOR = RegisterBlock("fluid_accelerator",
+            new FluidAccelerator(),
+            new BlockData(BlockModelType.CubeAll),
+            ItemGroup.DECORATIONS,
+            new TextLine[]{new TextLine("Range: 3x3x3", Formatting.GRAY), new TextLine("Speed: +2x", Formatting.GRAY) });
     public static Block RegisterBlock(String name, Block block, BlockData data, ItemGroup tab)
     {
         return RegisterBlock(name, block, data, tab, null);

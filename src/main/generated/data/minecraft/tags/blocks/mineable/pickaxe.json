@@ -19,6 +19,7 @@
     "crazymod:dense_spawner_accelerator",
     "crazymod:fueled_spawner_accelerator",
     "crazymod:fueled_dense_spawner_accelerator",
+    "crazymod:fluid_accelerator",
     "crazymod:computer_accelerator",
     "crazymod:advanced_computer_accelerator",
     "crazymod:ultimate_computer_accelerator"

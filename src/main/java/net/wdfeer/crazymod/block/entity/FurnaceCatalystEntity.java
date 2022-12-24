@@ -2,6 +2,7 @@ package net.wdfeer.crazymod.block.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,13 @@ public class FurnaceCatalystEntity extends FurnaceUpgradeEntity {
     public static void tickAll(World world, BlockPos furnacePos, BlockState furnaceState, BlockEntity furnaceEntity, FurnaceUpgradeEntity[] upgrades) {
         int extraTicks = getAllExtraTicks(upgrades);
         for (int i = 0; i < extraTicks; i++) {
-            BlockTickerEntity.tickBlockEntity(world, furnacePos, furnaceState, furnaceEntity);
+            tickBlockEntity(world, furnacePos, furnaceState, furnaceEntity);
         }
+    }
+    private static void tickBlockEntity(World world, BlockPos pos, BlockState state, BlockEntity entity){
+        BlockEntityType blockEntityType = entity.getType();
+        BlockEntityTicker ticker = state.getBlockEntityTicker(world, blockEntityType);
+        if (ticker == null) return;
+        ticker.tick(world, pos, state, entity);
     }
 }
