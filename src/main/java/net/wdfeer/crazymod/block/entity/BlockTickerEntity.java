@@ -6,6 +6,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.wdfeer.crazymod.CrazyMod;
 
 import static net.wdfeer.crazymod.util.ExtraMath.RandomRound;
 
@@ -28,7 +29,14 @@ public abstract class BlockTickerEntity extends BlockEntity {
             for (int y = -radius; y <= radius; y++) {
                 for (int z = -radius; z <= radius; z++) {
                     BlockPos blockPos = thisPos.add(x, y, z);
-                    instance.tryTickBlock(world, blockPos);
+                    try {
+                        instance.tryTickBlock(world, blockPos);
+                    } catch (Exception error){
+                        CrazyMod.LOGGER.error("Caught an unexpected exception while ticking " + world.getBlockState(blockPos)
+                                        + " at " + blockPos.toString()
+                                        + " with " + instance,
+                                error);
+                    }
                 }
             }
         }
